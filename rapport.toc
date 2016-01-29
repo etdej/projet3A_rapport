@@ -1,0 +1,6 @@
+\select@language {french}
+\contentsline {section}{\numberline {0.1}contexte}{1}
+\contentsline {subsection}{\numberline {0.1.1}ADM Polar, contexte du projet}{1}
+\contentsline {subsection}{\numberline {0.1.2}Presentation des donn\IeC {\'e}es}{1}
+\contentsline {section}{\numberline {0.2}Introduction}{1}
+\contentsline {subsection}{\numberline {0.2.1}Dimension reduction}{1}
