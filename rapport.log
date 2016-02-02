@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.11.5)  28 JAN 2016 15:16
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.11.5)  2 FEB 2016 11:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -187,18 +187,32 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <6> on input line 18.
  [1
 
-{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [1] [1]
- (./rapport.toc)
+{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [1]
+Chapitre 1.
+[1
+
+]
+Chapitre 2.
+[2
+
+] [3] (./rapport.toc
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 3.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 3.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 3.
+)
 \tf@toc=\write4
 \openout4 = `rapport.toc'.
 
-[2
+ [4
 
 ] (./rapport.lof)
 \tf@lof=\write5
 \openout5 = `rapport.lof'.
 
- [3
+ [5
 
 ] (./rapport.lot)
 \tf@lot=\write6
@@ -206,15 +220,15 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 
 
 No file rapport.ind.
-[4
+[6
 
 ] (./rapport.aux) ) 
 Here is how much of TeX's memory you used:
- 2423 strings out of 493089
- 33083 string characters out of 6134842
- 95359 words of memory out of 5000000
- 5896 multiletter control sequences out of 15000+600000
- 45230 words of font info for 35 fonts, out of 8000000 for 9000
+ 2447 strings out of 493089
+ 33356 string characters out of 6134842
+ 96359 words of memory out of 5000000
+ 5912 multiletter control sequences out of 15000+600000
+ 62029 words of font info for 46 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  28i,6n,30p,331b,597s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/lm/lm-ec
@@ -224,10 +238,10 @@ live/2015/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/local/texlive/2015
 /texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2015/texmf-dist
 /fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type
 1/public/lm/lmr17.pfb>
-Output written on rapport.pdf (6 pages, 143536 bytes).
+Output written on rapport.pdf (8 pages, 157340 bytes).
 PDF statistics:
- 48 PDF objects out of 1000 (max. 8388607)
- 33 compressed objects within 1 object stream
+ 56 PDF objects out of 1000 (max. 8388607)
+ 39 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
