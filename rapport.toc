@@ -9,19 +9,18 @@
 \contentsline {subsubsection}{PCA}{2}
 \contentsline {paragraph}{rappel de lam\IeC {\'e}thode }{2}
 \contentsline {paragraph}{pr\IeC {\'e}traitement utilis\IeC {\'e}}{2}
-\contentsline {paragraph}{r\IeC {\'e}sultats (notamment graphique)}{2}
-\contentsline {paragraph}{explication}{2}
-\contentsline {paragraph}{piste d'am\IeC {\'e}lioration}{2}
-\contentsline {subsection}{\numberline {2.2.2}M\IeC {\'e}thode de classification}{2}
-\contentsline {subsubsection}{Arbre d\IeC {\'e}cisionnel et Random Forest}{2}
-\contentsline {paragraph}{rappel de lam\IeC {\'e}thode }{2}
-\contentsline {paragraph}{pr\IeC {\'e}traitement utilis\IeC {\'e}}{2}
-\contentsline {paragraph}{r\IeC {\'e}sultats (notamment graphique)}{3}
-\contentsline {paragraph}{explication}{3}
-\contentsline {paragraph}{piste d'am\IeC {\'e}lioration}{3}
-\contentsline {subsubsection}{K plus proche voisin}{3}
-\contentsline {paragraph}{rappel de lam\IeC {\'e}thode }{3}
-\contentsline {paragraph}{pr\IeC {\'e}traitement utilis\IeC {\'e}}{3}
-\contentsline {paragraph}{r\IeC {\'e}sultats (notamment graphique)}{3}
-\contentsline {paragraph}{explication}{3}
-\contentsline {paragraph}{piste d'am\IeC {\'e}lioration}{3}
+\contentsline {paragraph}{r\IeC {\'e}sultats}{2}
+\contentsline {paragraph}{conclusion}{5}
+\contentsline {subsection}{\numberline {2.2.2}M\IeC {\'e}thode de classification}{5}
+\contentsline {subsubsection}{Arbre d\IeC {\'e}cisionnel et Random Forest}{5}
+\contentsline {paragraph}{rappel de lam\IeC {\'e}thode }{5}
+\contentsline {paragraph}{pr\IeC {\'e}traitement utilis\IeC {\'e}}{5}
+\contentsline {paragraph}{r\IeC {\'e}sultats (notamment graphique)}{5}
+\contentsline {paragraph}{explication}{5}
+\contentsline {paragraph}{piste d'am\IeC {\'e}lioration}{5}
+\contentsline {subsubsection}{K plus proche voisin}{5}
+\contentsline {paragraph}{rappel de lam\IeC {\'e}thode }{5}
+\contentsline {paragraph}{pr\IeC {\'e}traitement utilis\IeC {\'e}}{5}
+\contentsline {paragraph}{r\IeC {\'e}sultats (notamment graphique)}{5}
+\contentsline {paragraph}{explication}{5}
+\contentsline {paragraph}{piste d'am\IeC {\'e}lioration}{5}
