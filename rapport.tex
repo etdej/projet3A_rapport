@@ -86,9 +86,13 @@ Par contre, la projection de la PCA en 2 dimensions ne nous permet pas de sépar
 
 \subsubsection{K plus proche voisin}
 \paragraph{rappel de laméthode }
+La méthode des k plus proche voisin consiste à essayer de prédire l'états d'un nouveaux point en se basant sur l'état de ses voisins les plus proches. Cette méthode a l'avantage de pouvoir classer les données selons des schémas non linéaires. Par contre, c'est une méthode sensible à la dimension. 
 \paragraph{prétraitement utilisé}
-\paragraph{résultats (notamment graphique)}
-\paragraph{explication}
+Nous avons testé la méthodes des knn sur les centres des clusters pour plusieurs raisons :
+- A chaque classification, l'algorithme doit recalculer l'ensemble des distances avec tout l'échntillon d'apprentissage. Il y a donc une nécessité de réduire le nombre de donnée en entrée sur lesquels on calcule les distances.
+- De plus, chaque cluster regroupe un ensemble de point très proches les uns des autres. Ainsi, en prenant tous les éléments, les plus proches voisins d'un certain point auraient souvent tous appartenu au même cluster ce qui rend l'information extraite redondante. Cela aurait revenu à utiliser l'algorithme avec 1 seul voisin. 
+\paragraph{résultats}
+
 \paragraph{piste d'amélioration}
 
 \tableofcontents
