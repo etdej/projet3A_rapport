@@ -63,10 +63,10 @@ Les différents types de prétraitements que l'on peut faire avant de traiter le
 
 \subsection{Réduction de dimension}
 \subsubsection{PCA}
-\paragraph{rappel de laméthode }
+\paragraph{rappel de la méthode }
 L'Analyse en Composantes Principales (ou PCA) consiste à essayer de représenter les données dans un espace de plus petites dimensions. Les vecteurs directeurs du nouvel espace maximise la variance entre les données. Nous présentons ici les résultats pour la dimension 2.
 \paragraph{prétraitement utilisé}
-Nous effectuaons cette PCA sur les centres des clusters préalablement présentés (cf 1.1.1). Les centres des clusters représentent de manière fidèle l'ensemble des points qu'il rassemble. Chaque cluster est représenté par un vecteur d'éléments de la matrice de Muller. Tous les éléments de Muller sont gardés à l'exeption de la première ligne et première colonne qui ne sont pas a priori pertinentes (d'après les informations des physiciens)
+Nous effectuons cette PCA sur les centres des clusters préalablement présentés (cf 1.1.1). Les centres des clusters représentent de manière fidèle l'ensemble des points qu'il rassemble. Chaque cluster est représenté par un vecteur d'éléments de la matrice de Müller. Tous les éléments de Müller sont gardés à l’exception de la première ligne et première colonne qui ne sont pas a priori pertinentes (d'après les informations des physiciens)
 \begin{figure}
   \caption{centre des clusters avant transformation}
   \centering
@@ -83,40 +83,40 @@ Nous effectuaons cette PCA sur les centres des clusters préalablement présent�
   \includegraphics[width=10cm]{PCA_3.png}
 \end{figure}
 \begin{figure}
-  \caption{analyse de la comosante principale}
+  \caption{analyse de la composante principale}
   \centering
   \includegraphics[width=10cm]{PCA_2.png}
 \end{figure}
 
 \paragraph{résultats}
 La réduction de dimension par PCA semble efficace. La composante principale explique 90\% de la variance (fig 2.3). 
-De l'analyse de la première comosante (fig 2.4) ressort deux effets principaux :
-- La petite contribution des éléments diagonaux de la matrice de Muller
+De l'analyse de la première composante (fig 2.4) ressort deux effets principaux :
+- La petite contribution des éléments diagonaux de la matrice de Müller
 - Le rôle prépondérant de M34 et M43
 
-On remarque une certaine anticorrlation des éléments de la matrice de muller. Le poids de M43 est proche de l'opposé de celui de M34. Le poids de M42 est également proche de l'opposé de celui de M24. Cette observation n'est par contre pas vérifiée pour M23 et M32 qui semblent corrélés.
+On remarque une certaine anti-corrélation des éléments de la matrice de Müller. Le poids de M43 est proche de l'opposé de celui de M34. Le poids de M42 est également proche de l'opposé de celui de M24. Cette observation n'est par contre pas vérifiée pour M23 et M32 qui semblent corrélés.
 \paragraph{conclusion}
-La PCA effectuée sur les centres des clusters valident certaines supposition comme le rôle faible des éléments diagonaux ou le rôle improtant des éléments M34 et M43.
+La PCA effectuée sur les centres des clusters valident certaines supposition comme le rôle faible des éléments diagonaux ou le rôle important des éléments M34 et M43.
 
 Par contre, la projection de la PCA en 2 dimensions ne nous permet pas de séparer les données de manière suffisantes pour être capable de distinguer des zones clairement différentes entre les clusters sains et les clusters malades. (fig 2.2)
 \subsection{Méthode de classification}
 
 \subsubsection{Arbre décisionnel et Random Forest}
-\paragraph{rappel de laméthode }
+\paragraph{rappel de la méthode }
 \paragraph{prétraitement utilisé}
 \paragraph{résultats (notamment graphique)}
 \paragraph{explication}
 \paragraph{piste d'amélioration}
 
 \subsubsection{K plus proche voisin}
-\paragraph{rappel de laméthode }
-La méthode des k plus proche voisin consiste à essayer de prédire l'états d'un nouveaux point en se basant sur l'état de ses voisins les plus proches. Cette méthode a l'avantage de pouvoir classer les données selons des schémas non linéaires. Par contre, c'est une méthode sensible à la dimension. 
+\paragraph{rappel de la méthode }
+La méthode des k plus proche voisin consiste à essayer de prédire l’état d'un nouveaux point en se basant sur l'état de ses voisins les plus proches. Cette méthode a l'avantage de pouvoir classer les données selon des schémas non linéaires. Par contre, c'est une méthode sensible à la dimension. 
 \paragraph{prétraitement utilisé}
-Nous avons testé la méthodes des knn sur les centres des clusters pour plusieurs raisons :
-- A chaque classification, l'algorithme doit recalculer l'ensemble des distances avec tout l'échntillon d'apprentissage. Il y a donc une nécessité de réduire le nombre de donnée en entrée sur lesquels on calcule les distances.
+Nous avons testé la méthodes des KNN sur les centres des clusters pour plusieurs raisons :
+- A chaque classification, l'algorithme doit recalculer l'ensemble des distances avec tout l’échantillon d'apprentissage. Il y a donc une nécessité de réduire le nombre de donnée en entrée sur lesquels on calcule les distances.
 - De plus, chaque cluster regroupe un ensemble de point très proches les uns des autres. Ainsi, en prenant tous les éléments, les plus proches voisins d'un certain point auraient souvent tous appartenu au même cluster ce qui rend l'information extraite redondante. Cela aurait revenu à utiliser l'algorithme avec 1 seul voisin. 
 \paragraph{résultats}
-Les résultats présentés ci dessous corresponde au taux de bonne prédiction en prenant une image de test et en cherchant les k plus proches voisins sur les 16 autres. Chaque cluster est représenté par un vecteur comprenant les éléments suivants de la matrice de Muller : ['M23', 'M24', 'M32', 'M34', 'M42', 'M43'].
+Les résultats présentés ci dessous corresponde au taux de bonne prédiction en prenant une image de test et en cherchant les k plus proches voisins sur les 16 autres. Chaque cluster est représenté par un vecteur comprenant les éléments suivants de la matrice de Müller : ['M23', 'M24', 'M32', 'M34', 'M42', 'M43'].
 \subparagraph{}
 \begin{center}
 \begin{tabular}{|c|c|}  
@@ -146,12 +146,12 @@ Les résultats présentés ci dessous corresponde au taux de bonne prédiction e
 \end{tabular}
 \end{center}
 
-En utilisant les 9 éléments de la matrice de Muller Mij avec i et j différents de 1, on obtient un taux moyen de 65%
+En utilisant les 9 éléments de la matrice de Müller Mij avec i et j différents de 1, on obtient un taux moyen de 65%
 \paragraph{conclusion}
 Les résultats donnés par les knn ne sont pas très bon. Piste d'explication?
 
 \subsection{SVM}
-\paragraph{rappel de laméthode}
+\paragraph{rappel de la méthode}
 \paragraph{prétraitement utilisé}
 \paragraph{résultats (notamment graphique)}
 \paragraph{explication}
