@@ -42,17 +42,17 @@ Le PICM se bases pour cela d'observations de relation entre les images polarisé
 La polarisation génère 16 images par échantillon. On associe alors à chaque pixel une matrice $4x4$ appelée matrice de Müller. Dans cette matrice, la première ligne et la première colonne représentent l'intensité du signal, ces éléments influent peu sur le diagnostic mais ont des valeur élevés, ils introduisent beaucoup de biais et de sur-apprentissage. Nous avons donc décidé de ne pas les prendre en compte. Les éléments diagonaux sont normalement censé être les plus significatifs mais les reflets introduisent beaucoup de bruit rendant ces données difficilement utilisables. Il reste 6 éléments dans la matrices sur lesquels nous allons nous concentrer. 
 
 \subsection{Le Clustering}
-La projection des pixels par PCA en donnant rien de facilement exploitable, nous avons regroupés les données pas images. Nous avons donc clustérisé les pixels de chaque image, indépendamment de leur position, et uniquement sur les $6$ éléments significatifs de la matrice de Muller. Les diagnostics étant propres à chaque image (une seule image avec un diagnostic non uniforme), chaque cluster a un diagnostic associé. 
+La disposition des données n'étant pas facilement exploitable directement il fallait réduire la complexité du problème, par exemple en limitant le nombre de données. Nous avons ainsi décidé de clustériser les données de chaque image afin d'en avoir beaucoup moins, mais plus significatives. La position du pixel dans l'image n'a pas été prise en compte, même si les zones résultantes sont proches. La clustérisation à été faite par un algorithme de type KNN (k plus proches voisins) sur les $6$ éléments significatifs de la matrice de Müller. Les diagnostics étant propres à chaque image (une seule image avec un diagnostic non uniforme), chaque cluster est associé à un diagnostic. 
 
 La méthode de clustering utilisé consiste en :
 \begin{itemize}
-\item déterminer k, le nombre de clusters
-\item regrouper les pixels de l'image selon ces k clusters ($Knn$)
+\item choisir k, le nombre de clusters
+\item regrouper les pixels de l'image selon ces k clusters (par $KNN$)
 \item calculer l'erreur totale commise (somme des distances au centre du cluster)
-\item recommencer si l'erreur est trop grande
+\item recommencer avec un k plus grand si l'erreur est trop grande
 \end{itemize}
 
-Cette méthode nous a permis de passer de $200 000$ points à $52$ plus significatifs. Elle nous a aussi permis de mieux comprendre la répartition des points. 
+Cette méthode nous a permis de passer de $163 000$ points à $52$ plus significatifs. Elle nous a aussi permis de mieux comprendre la répartition des points. Le clustering a surtout un apport au niveau de la compréhension des données. Il pourrait avoir un impact (en tant que tel) sur les résultats, mais son but a été surtout de mieux comprendre la disposition des données pour pouvoir apprendre dessus.
 \chapter{Le traitement des données}
 
 \section{Prétraitement des données}
