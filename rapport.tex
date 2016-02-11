@@ -28,24 +28,18 @@ Le résumé (abstract en anglais) de mon article.
 
 \chapter{contexte}
 \section{ADM Polar, contexte du projet}
-\section{Presentation des données}
- A mettre ici : présentation du set données. Nombre de pièces différentes. taille des images. Explication de ce qu'est la matrice de Muller
-
-
-\chapter{Le traitement des données}
-
-\section{Prétraitement des données}
-Le Prétraitement de données est l'étape essentielle qui précède l'apprentissage. Elle est la clé de celui ci, un bon prétraitement permet d'éliminer le bruit et présente les données sous un angle facilement exploitable. C'est là que se situe tout l'enjeu d'un classifieur Big Data ainsi que le travail d'un data analyst, les méthodes d'apprentissage étant préexistantes.  
-
-Les différents types de prétraitements que l'on peut faire avant de traiter les données
-\subsection{Les données}
-Pour ce projet nous disposions d'un jeu de données de $200 000$ (???) pixels répartis sur 17 images différentes. Pour chaque pixel nous avions les 16 éléments de la matrice de Müller, leur position, leur diagnostic, et l'image correspondante.
+\section{Présentation des données}
+Pour ce projet nous disposions d'un jeu de données de $163 000$ pixels répartis sur 17 images différentes. Pour chaque pixel nous avions les 16 éléments de la matrice de Müller, leur position, leur diagnostic, et l'image correspondante.
 Ces Pixels sont répartis en $4/5$ de sains et $1/5$ de malades. L'affichage des pixels nous montre que dans chaque image, les pixels sont répartis en zones au diagnostic identique. Sur les $17$ images, $11$ possèdent que des zones saines, une a une zone saine et une zone malade et les $5$ dernières ont que des zones malades. Le nombre d'images étant assez limité il n'a été facile de trouver des points communs aux pixels sain et aux pixels malades.
+
 
 mettre les images ici. (toutes?)
 
 \subsection{la Matrice de Muller}
-
+Les données sont obtenues par polarisation de la lumière. De la lumière polarisée est envoyée sur l'échantillon, réfléchi par celui ci est analysé ensuite.
+La matrice de Müller est obtenue à partir de l'analyse de la polarisation de la lumière réfléchie. Le postulat du laboratoire sur lequel repose tout le traitement des données est que les cellules saines et malades polarisent différemment la lumière. Cela implique qu'il est possible de reconnaître une cellule malade par la polarisation de la lumière réfléchie.
+Le PICM se bases pour cela d'observations de relation entre les images polarisées et le diagnostic. 
+La polarisation génère 16 images par échantillon. On associe alors à chaque pixel une matrice $4x4$ appelée matrice de Müller. Dans cette matrice, la première ligne et la première colonne représentent l'intensité du signal, ces éléments influent peu sur le diagnostic mais ont des valeur élevés, ils introduisent beaucoup de biais et de sur-apprentissage. Nous avons donc décidé de ne pas les prendre en compte. Les éléments diagonaux sont normalement censé être les plus significatifs mais les reflets introduisent beaucoup de bruit rendant ces données difficilement utilisables. Il reste 6 éléments dans la matrices sur lesquels nous allons nous concentrer. 
 
 \subsection{Le Clustering}
 La projection des pixels par PCA en donnant rien de facilement exploitable, nous avons regroupés les données pas images. Nous avons donc clustérisé les pixels de chaque image, indépendamment de leur position, et uniquement sur les $6$ éléments significatifs de la matrice de Muller. Les diagnostics étant propres à chaque image (une seule image avec un diagnostic non uniforme), chaque cluster a un diagnostic associé. 
@@ -58,7 +52,13 @@ La méthode de clustering utilisé consiste en :
 \item recommencer si l'erreur est trop grande
 \end{itemize}
 
-Cette méthode nous a permis de passer de $200 000$ points à $52$ plus significatifs. Elle nous a aussi permis de mieux comprendre la répartition des points.
+Cette méthode nous a permis de passer de $200 000$ points à $52$ plus significatifs. Elle nous a aussi permis de mieux comprendre la répartition des points. 
+\chapter{Le traitement des données}
+
+\section{Prétraitement des données}
+Le Prétraitement de données est l'étape essentielle qui précède l'apprentissage. Elle est la clé de celui ci, un bon prétraitement permet d'éliminer le bruit et présente les données sous un angle facilement exploitable. C'est là que se situe tout l'enjeu d'un classifieur Big Data ainsi que le travail d'un data analyst, les méthodes d'apprentissage étant préexistantes.  
+
+Les différents types de prétraitements que l'on peut faire avant de traiter les données
 \section{Les différentes approches de traitement des données}
 
 \subsection{Réduction de dimension}
