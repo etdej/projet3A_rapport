@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.9.18)  18 FEB 2016 18:23
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.9.18)  18 FEB 2016 18:51
 entering extended mode
 **rapport.tex
 (C:\Users\AlexandreGuinaudeau\Desktop\GitHub\projet3A_rapport\rapport.tex
@@ -323,80 +323,95 @@ Underfull \hbox (badness 10000) in paragraph at lines 85--86
 
  []
 
-[4
+<figures/visualisation.png, id=26, 578.16pt x 433.62pt>
+File: figures/visualisation.png Graphic file (type png)
+
+<use figures/visualisation.png>
+Package pdftex.def Info: figures/visualisation.png used on input line 99.
+(pdftex.def)             Requested size: 284.52756pt x 213.39536pt.
+ [4
 
 ]
+<figures/density.png, id=31, 578.16pt x 433.62pt>
+File: figures/density.png Graphic file (type png)
+ <use figures/density.png>
+Package pdftex.def Info: figures/density.png used on input line 111.
+(pdftex.def)             Requested size: 284.52756pt x 213.39536pt.
+
+[5 <C:/Users/AlexandreGuinaudeau/Desktop/GitHub/projet3A_rapport/figures/visual
+isation.png> <C:/Users/AlexandreGuinaudeau/Desktop/GitHub/projet3A_rapport/figu
+res/density.png>]
 (C:\Users\AlexandreGuinaudeau\AppData\Roaming\MiKTeX\2.9\tex\latex\ucs\uni-32.d
 ef
 File: uni-32.def 2013/05/13 UCS: Unicode data U+2000..U+20FF
-) <figures/PCA_0.png, id=29, 578.16pt x 433.62pt>
+) <figures/PCA_0.png, id=38, 578.16pt x 433.62pt>
 File: figures/PCA_0.png Graphic file (type png)
  <use figures/PCA_0.png>
-Package pdftex.def Info: figures/PCA_0.png used on input line 106.
+Package pdftex.def Info: figures/PCA_0.png used on input line 126.
 (pdftex.def)             Requested size: 284.52756pt x 213.39536pt.
 
-<figures/PCA_1.png, id=31, 578.16pt x 433.62pt>
+<figures/PCA_1.png, id=39, 578.16pt x 433.62pt>
 File: figures/PCA_1.png Graphic file (type png)
  <use figures/PCA_1.png>
-Package pdftex.def Info: figures/PCA_1.png used on input line 111.
+Package pdftex.def Info: figures/PCA_1.png used on input line 131.
 (pdftex.def)             Requested size: 284.52756pt x 213.39536pt.
 
-<figures/PCA_3.png, id=32, 578.16pt x 433.62pt>
+<figures/PCA_3.png, id=40, 578.16pt x 433.62pt>
 File: figures/PCA_3.png Graphic file (type png)
  <use figures/PCA_3.png>
-Package pdftex.def Info: figures/PCA_3.png used on input line 116.
+Package pdftex.def Info: figures/PCA_3.png used on input line 136.
 (pdftex.def)             Requested size: 284.52756pt x 213.39536pt.
 
-<figures/PCA_2.png, id=33, 578.16pt x 433.62pt>
+<figures/PCA_2.png, id=41, 578.16pt x 433.62pt>
 File: figures/PCA_2.png Graphic file (type png)
  <use figures/PCA_2.png>
-Package pdftex.def Info: figures/PCA_2.png used on input line 121.
+Package pdftex.def Info: figures/PCA_2.png used on input line 141.
 (pdftex.def)             Requested size: 284.52756pt x 213.39536pt.
 
-[5 <C:/Users/AlexandreGuinaudeau/Desktop/GitHub/projet3A_rapport/figures/PCA_0.
-png>] [6 <C:/Users/AlexandreGuinaudeau/Desktop/GitHub/projet3A_rapport/figures/
-PCA_1.png> <C:/Users/AlexandreGuinaudeau/Desktop/GitHub/projet3A_rapport/figure
-s/PCA_3.png>] [7 <C:/Users/AlexandreGuinaudeau/Desktop/GitHub/projet3A_rapport/
-figures/PCA_2.png>] <figures/SVM_CV.png, id=48, 417.2388pt x 218.2554pt>
+[6 <C:/Users/AlexandreGuinaudeau/Desktop/GitHub/projet3A_rapport/figures/PCA_0.
+png> <C:/Users/AlexandreGuinaudeau/Desktop/GitHub/projet3A_rapport/figures/PCA_
+1.png>] [7 <C:/Users/AlexandreGuinaudeau/Desktop/GitHub/projet3A_rapport/figure
+s/PCA_3.png> <C:/Users/AlexandreGuinaudeau/Desktop/GitHub/projet3A_rapport/figu
+res/PCA_2.png>] [8] <figures/SVM_CV.png, id=55, 417.2388pt x 218.2554pt>
 File: figures/SVM_CV.png Graphic file (type png)
 
 <use figures/SVM_CV.png>
-Package pdftex.def Info: figures/SVM_CV.png used on input line 204.
+Package pdftex.def Info: figures/SVM_CV.png used on input line 224.
 (pdftex.def)             Requested size: 284.52756pt x 148.84131pt.
- [8]
-<figures/Compared_CV.png, id=52, 712.1004pt x 332.9238pt>
+ [9]
+<figures/Compared_CV.png, id=59, 712.1004pt x 332.9238pt>
 File: figures/Compared_CV.png Graphic file (type png)
 
 <use figures/Compared_CV.png>
-Package pdftex.def Info: figures/Compared_CV.png used on input line 221.
+Package pdftex.def Info: figures/Compared_CV.png used on input line 241.
 (pdftex.def)             Requested size: 284.52756pt x 133.01984pt.
- [9 <C:/Users/AlexandreGuinaudeau/Desktop/GitHub/projet3A_rapport/figures/SVM_C
-V.png> <C:/Users/AlexandreGuinaudeau/Desktop/GitHub/projet3A_rapport/figures/Co
-mpared_CV.png>] [10]
+ [10 <C:/Users/AlexandreGuinaudeau/Desktop/GitHub/projet3A_rapport/figures/SVM_
+CV.png> <C:/Users/AlexandreGuinaudeau/Desktop/GitHub/projet3A_rapport/figures/C
+ompared_CV.png>] [11]
 (C:\Users\AlexandreGuinaudeau\Desktop\GitHub\projet3A_rapport\rapport.toc)
 \tf@toc=\write4
 
-[11
+[12
 
 ] (C:\Users\AlexandreGuinaudeau\Desktop\GitHub\projet3A_rapport\rapport.lof)
 \tf@lof=\write5
-[12
+[13
 
 ] (C:\Users\AlexandreGuinaudeau\Desktop\GitHub\projet3A_rapport\rapport.lot)
 \tf@lot=\write6
 (C:\Users\AlexandreGuinaudeau\Desktop\GitHub\projet3A_rapport\rapport.ind
-[13
+[14
 
-] [14
+] [15
 
 
 ])
 (C:\Users\AlexandreGuinaudeau\Desktop\GitHub\projet3A_rapport\rapport.aux) ) 
 Here is how much of TeX's memory you used:
- 4149 strings out of 493706
- 57640 string characters out of 3144538
+ 4159 strings out of 493706
+ 57882 string characters out of 3144538
  125641 words of memory out of 3000000
- 7389 multiletter control sequences out of 15000+200000
+ 7397 multiletter control sequences out of 15000+200000
  69087 words of font info for 48 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
  28i,6n,32p,1164b,598s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -410,9 +425,9 @@ s/type1/public/lm/lmmi10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm
 /lmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr12.pfb><C:/Pro
 gram Files/MiKTeX 2.9/fonts/type1/public/lm/lmr17.pfb><C:/Program Files/MiKTeX 
 2.9/fonts/type1/public/lm/lmri10.pfb>
-Output written on rapport.pdf (16 pages, 383831 bytes).
+Output written on rapport.pdf (17 pages, 562653 bytes).
 PDF statistics:
- 104 PDF objects out of 1000 (max. 8388607)
+ 111 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 31 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 41 words of extra memory for PDF output out of 10000 (max. 10000000)
 

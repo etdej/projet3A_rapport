@@ -89,9 +89,29 @@ L'affichage des 16 images de la matrice de Müller des échantillons nous montre
 A partir de ces images et de l'interprétation des chercheurs, nous avons déduit que la première colonne et la première ligne ne permettraient pas de discriminer les cellules. De plus, les données sont normalisées par rapport à l'élément M11 de la matrice de Müller. Or, cet élément correspond à l'intensité lumineuse de l'échantillon (autrement dit, c'est une image en noir et blanc de l'échantillon). Cet élément dépend donc fortement des conditions de l'expérience, et en particulier certaines zones peuvent être très lumineuses si elles sont éclairées, ce qui est évidemment indépendant du diagnostique des cellules. Nous avons donc décidé de multiplier les autres images par la composant M11, afin d'obtenir des valeurs comparables d'une image à l'autre. Nous avons donc décidé de réduire la dimension de 16 à 9 voire 6, en ne sélectionnant que les éléments Mij avec i et j différents de 1, voire uniquement les éléments extradiagonaux, pour que les résultats ne soient pas faussés par la forte différence de variance entre les éléments diagonaux et extradiagonaux de la matrice. 
 
 
-Enfin, pour mesurer la performance d'une méthode de classification, nous avons décidé de tester sur des images indépendantes des images d'apprentissage. Tester les pixels d'une même image risque trop fortement de créer un phénomène de surapprentissage (overfitting), en classant les pixels comme leurs voisins, ce qui n'a pas d'intérêt
+Enfin, pour mesurer la performance d'une méthode de classification, nous avons décidé de tester sur des images indépendantes des images d'apprentissage. Tester les pixels d'une même image risque trop fortement de créer un phénomène de surapprentissage (overfitting), en classant les pixels comme leurs voisins, ce qui n'a pas d'intérêt.
 
 
+Nous avons ensuite décidé de visualiser les données dans un espace de plus petite dimension. En le projetant dans un espace de dimension 2 optimal (voir la section PCA), on obtient l'image suivante:
+\begin{figure}[htbp]
+  \caption{Affichage des points et des clusters en dimension 2}
+  \centering
+  \includegraphics[width=10cm]{visualisation.png}
+\end{figure}
+
+Chaque pixel est représenté par un petit point, vert s'il est sain et rouge s'il est malade. Les gros points sont les centres des clusters, qui représentent le milieu d'un ensemble de points proches d'une même image. On a retiré ici les valeurs abhérentes, certains points isolés étant très éloignés de tous les autres.
+
+
+Cette visualisation des données nous apprend que les points malades sont moins dispersés que les points sains, et que les moyennes des points sains et malades sont décalées.
+Plus précisément, on peut alors afficher les densités de points situés à une certaine distance (dans l'espace de dimension 6) de la moyenne de tous les points.
+
+\begin{figure}[htbp]
+  \caption{Densité de points en fonction de leur distance à la moyenne des points}
+  \centering
+  \includegraphics[width=10cm]{density.png}
+\end{figure}
+
+On remarque qu'à proximité de ce centre, il y a plus de points malades que sains, bien qu'il y ait quatre fois plus de points sains au total. Les points sains sont pour la plupart bien plus éloignés. Cette distance semble donc être un facteur intéressant à prendre en compte pour la suite.
 
 
 \subsection{Réduction de dimension}
@@ -100,22 +120,22 @@ Enfin, pour mesurer la performance d'une méthode de classification, nous avons 
 L'Analyse en Composantes Principales (ou PCA) consiste à essayer de représenter les données dans un espace de plus petites dimensions. Les vecteurs directeurs du nouvel espace maximise la variance entre les données. Nous présentons ici les résultats pour la dimension 2.
 \paragraph{prétraitement utilisé}
 Nous effectuons cette PCA sur les centres des clusters préalablement présentés (cf 1.1.1). Les centres des clusters représentent de manière fidèle l'ensemble des points qu'il rassemble. Chaque cluster est représenté par un vecteur d'éléments de la matrice de Müller. Tous les éléments de Müller sont gardés à l’exception de la première ligne et première colonne qui ne sont pas a priori pertinentes (d'après les informations des physiciens)
-\begin{figure}
+\begin{figure}[htbp]
   \caption{centre des clusters avant transformation}
   \centering
   \includegraphics[width=10cm]{PCA_0.png}
 \end{figure}
-\begin{figure}
+\begin{figure}[htbp]
   \caption{centre des clusters après transformation}
   \centering
   \includegraphics[width=10cm]{PCA_1.png}
 \end{figure}
-\begin{figure}
+\begin{figure}[htbp]
   \caption{Part de variance expliquée}
   \centering
   \includegraphics[width=10cm]{PCA_3.png}
 \end{figure}
-\begin{figure}
+\begin{figure}[htbp]
   \caption{analyse de la composante principale}
   \centering
   \includegraphics[width=10cm]{PCA_2.png}
@@ -198,7 +218,7 @@ Les Machines à Vecteurs Support ou SVM (Support Vector Machine) sont des classi
 Les SVM sont efficaces lorque le nombre de feature est inférieur (voire très inférieur) au nombre de données. On applique donc cette méthode aux points directement, et non pas aux centres des clusters.
 
 \paragraph{résultats}
-\begin{figure}
+\begin{figure}[htbp]
   \caption{Résultats de la méthode SVM: proportion de bonnes prédictions et nombre de pixels dans l'ensemble de test, pour chaque image.}
   \centering
   \includegraphics[width=10cm]{SVM_CV.png}
@@ -215,7 +235,7 @@ Pour contrer ce problème, il faudrait "apprendre la fonction noyeau". C'est en 
 
 \section*{Résultats}
 
-\begin{figure}
+\begin{figure}[htbp]
   \caption{Comparaison des taux de bonne prédiction des différentes méhodes de classification testées.}
   \centering
   \includegraphics[width=10cm]{Compared_CV.png}
