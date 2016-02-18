@@ -7,15 +7,16 @@
 \contentsline {chapter}{\numberline {2}Le traitement des donn\IeC {\'e}es}{4}
 \contentsline {section}{\numberline {2.1}Pr\IeC {\'e}traitement des donn\IeC {\'e}es}{4}
 \contentsline {section}{\numberline {2.2}Les diff\IeC {\'e}rentes approches de traitement des donn\IeC {\'e}es}{4}
-\contentsline {subsection}{\numberline {2.2.1}R\IeC {\'e}duction de dimension}{4}
-\contentsline {subsubsection}{PCA}{4}
-\contentsline {paragraph}{rappel de la m\IeC {\'e}thode }{4}
-\contentsline {paragraph}{pr\IeC {\'e}traitement utilis\IeC {\'e}}{4}
-\contentsline {paragraph}{r\IeC {\'e}sultats}{4}
-\contentsline {paragraph}{conclusion}{4}
-\contentsline {subsection}{\numberline {2.2.2}M\IeC {\'e}thode de classification}{7}
-\contentsline {subsubsection}{Arbre d\IeC {\'e}cisionnel et Random Forest}{7}
-\contentsline {paragraph}{rappel de la m\IeC {\'e}thode }{7}
+\contentsline {subsection}{\numberline {2.2.1}La visualisation des donn\IeC {\'e}es}{4}
+\contentsline {subsection}{\numberline {2.2.2}R\IeC {\'e}duction de dimension}{5}
+\contentsline {subsubsection}{PCA}{5}
+\contentsline {paragraph}{rappel de la m\IeC {\'e}thode }{5}
+\contentsline {paragraph}{pr\IeC {\'e}traitement utilis\IeC {\'e}}{5}
+\contentsline {paragraph}{r\IeC {\'e}sultats}{5}
+\contentsline {paragraph}{conclusion}{5}
+\contentsline {subsection}{\numberline {2.2.3}M\IeC {\'e}thode de classification}{5}
+\contentsline {subsubsection}{Arbre d\IeC {\'e}cisionnel et Random Forest}{5}
+\contentsline {paragraph}{rappel de la m\IeC {\'e}thode }{5}
 \contentsline {subparagraph}{Arbre d\IeC {\'e}cisionnel}{7}
 \contentsline {subparagraph}{Random Forest}{7}
 \contentsline {paragraph}{pr\IeC {\'e}traitement utilis\IeC {\'e}}{7}
@@ -25,8 +26,8 @@
 \contentsline {subsubsection}{K plus proche voisin}{7}
 \contentsline {paragraph}{rappel de la m\IeC {\'e}thode }{7}
 \contentsline {paragraph}{pr\IeC {\'e}traitement utilis\IeC {\'e}}{7}
-\contentsline {paragraph}{r\IeC {\'e}sultats}{7}
-\contentsline {subparagraph}{}{7}
+\contentsline {paragraph}{r\IeC {\'e}sultats}{8}
+\contentsline {subparagraph}{}{8}
 \contentsline {paragraph}{conclusion}{8}
 \contentsline {subsubsection}{SVM}{8}
 \contentsline {paragraph}{pr\IeC {\'e}traitement utilis\IeC {\'e}}{8}

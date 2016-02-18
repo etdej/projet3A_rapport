@@ -80,6 +80,20 @@ Le Prétraitement de données est l'étape essentielle qui précède l'apprentis
 Les différents types de prétraitements que l'on peut faire avant de traiter les données
 \section{Les différentes approches de traitement des données}
 
+\subsection{La visualisation des données}
+
+La première étape du traitement des données est sa visualisation, pour déterminer les modèles de classification les plus prometteurs.\\
+
+L'affichage des 16 images de la matrice de Müller des échantillons nous montre que les éléments diagonaux se distinguent des autres: ils correspondent à la conservation d'une composante de polarisation (rectiligne, circulaire...), et il y a donc une variance des valeurs bien plus importantes que sur les autre composantes. Par ailleurs, les images de la première ligne et de la première colonne paraissent très bruitées. 
+
+A partir de ces images et de l'interprétation des chercheurs, nous avons déduit que la première colonne et la première ligne ne permettraient pas de discriminer les cellules. De plus, les données sont normalisées par rapport à l'élément M11 de la matrice de Müller. Or, cet élément correspond à l'intensité lumineuse de l'échantillon (autrement dit, c'est une image en noir et blanc de l'échantillon). Cet élément dépend donc fortement des conditions de l'expérience, et en particulier certaines zones peuvent être très lumineuses si elles sont éclairées, ce qui est évidemment indépendant du diagnostique des cellules. Nous avons donc décidé de multiplier les autres images par la composant M11, afin d'obtenir des valeurs comparables d'une image à l'autre. Nous avons donc décidé de réduire la dimension de 16 à 9 voire 6, en ne sélectionnant que les éléments Mij avec i et j différents de 1, voire uniquement les éléments extradiagonaux, pour que les résultats ne soient pas faussés par la forte différence de variance entre les éléments diagonaux et extradiagonaux de la matrice. 
+
+
+Enfin, pour mesurer la performance d'une méthode de classification, nous avons décidé de tester sur des images indépendantes des images d'apprentissage. Tester les pixels d'une même image risque trop fortement de créer un phénomène de surapprentissage (overfitting), en classant les pixels comme leurs voisins, ce qui n'a pas d'intérêt
+
+
+
+
 \subsection{Réduction de dimension}
 \subsubsection{PCA}
 \paragraph{rappel de la méthode }
@@ -184,41 +198,55 @@ Les Machines à Vecteurs Support ou SVM (Support Vector Machine) sont des classi
 Les SVM sont efficaces lorque le nombre de feature est inférieur (voire très inférieur) au nombre de données. On applique donc cette méthode aux points directement, et non pas aux centres des clusters.
 
 \paragraph{résultats}
+\begin{figure}
+  \caption{Résultats de la méthode SVM: proportion de bonnes prédictions et nombre de pixels dans l'ensemble de test, pour chaque image.}
+  \centering
+  \includegraphics[width=10cm]{SVM_CV.png}
+\end{figure}
+
+La moyenne de ces prédictions est de 83\%.
+Pourtant, en pondérant ces résultats par le nombre de points dans l'échantillon de test (pour que les images ayant beaucoup de pixels à classifier aient plus d'importance), on obtient un taux moyen de seulement 76\%. En effet, les images ayant beaucoup de pixels ont des moins bons taux de prédiction, ce qui pourrait indiquer que nous n'avons pas atteint le seuil de données critiques nécessaires à des résultats optimaux. Avec quelques images supplémentaires, on pourrait espérer garantir un taux de précision d'au moins 80\% avec cette méthode. 
+Dans les circonstances actuelles, certaines images ont des résultats très inférieurs à cette valeur moyenne, voire en-deçà de 50\%: cette méthode n'est donc pas assez fiable pour permettre de bien classifier les données.
+
+\paragraph{explication et piste d'amélioration}
+Le problème du Kernel trick\index{Kernel trick} est qu'il necessite d'avoir une idée a priori du type de fonction que l'on cherche à estimer pour pouvoir utiliser un noyeau adequat. Ce n'est ici pas le cas, on ne sait pas a priori qu'elle pourrait être le type de fonction permettant de distinguer linéairement un pixel sain d'un pixel malade.
+
+Pour contrer ce problème, il faudrait "apprendre la fonction noyeau". C'est en quelque sorte le rôle des neural networks.\index{Neural networks}. On peut voir les n-1 couches du réseau de neuronnes comme étant la fonction du noyeau et la dernière comme une séparation linéaire sur les données plongées dans ce nouvel espace.
+
+\section*{Résultats}
+
+\begin{figure}
+  \caption{Comparaison des taux de bonne prédiction des différentes méhodes de classification testées.}
+  \centering
+  \includegraphics[width=10cm]{Compared_CV.png}
+\end{figure}
+
 \begin{center}
-\begin{tabular}{|c|c|}  
+Moyenne des taux de précision\\
+
+\begin{tabular}{|c|c|c|}  
   \hline
-  échantillon de test & taux de bon résultat \\
+  Méthode & Moyenne simple & Moyenne pondérée\\
   \hline
-  1 & 100\%\\
-  2 & 0\%\\
-  3 & 100\%\\
-  4 & 100\%\\
-  5 & 0\%\\
-  6  & 100\%\\
-  7 & 33\%\\  
-  8 & 50\%\\
-  9 & 66\%\\
-  10 & 100\%\\
-  11 & 100\%\\
-  12 & 100\%\\
-  13 & 100\%\\
-  14 & 75\%\\
-  15 & 66\%\\
-  16 & 75\%\\
-  17 & 100\%\\
+  KNN & 73.41 & 65.75\\
+  Neural Network & 80.49 & 71.70\\  
+  SVM & 82.56 & 75.65\\
   \hline
-  moyenne & 69\%\\  
+  Maximum & 85.78 & 79.17\\
   \hline
 \end{tabular}
 \end{center}
 
-En pondérant ces résultats par le nombre de points dans l'échantillon de test (pour que les images ayant beaucoup de pixels à classifier aient plus d'importance), on obtient un taux moyen de 65\%.
-Notons toutefois que certaines images ont des résultats très inférieurs à cette valeur moyenne, la variance de ces pourcentages est de ... \%. Cette méthode n'est pas assez fiable pour permettre de bien classifier les données (du moins à partir des échantillons à notre disposition).
+Ce tableau présente les taux de précision moyens des méthodes précédentes, soit en moyennant sur chaque image, soit en pondérant les résultats par le nombre de pixels de l'image (ainsi, chaque pixel intervient 1 fois dans le calcul final, selon sa classification à partir de 16 autres images).
+Enfin, on calcule le taux de précision maximal pour les méthodes de classification précédentes, image par image. Si l'on combine les méthodes précédentes, on ne peut pas espérer dépasser cette valeur.
 
-\paragraph{explication et piste d'amélioration}
-Le problème du Kernel trick\index{Kernel trick} est qu'il necessite d'avoir une idée a priori du type de fonction que l'on cherche à estimer pour pouvoir utiliser un noyeau adequat. Ce n'est ici pas le cas, on ne sais pas a priori qu'elle pourrait être le type de fonction permettant de distinguer linéairement un pixel sain d'un pixel malade.
 
-Pour contrer ce problème, il faudrait "apprendre la fonction noyeau". C'est en quelque sorte le rôle des neural networks.\index{Neural networks}. On peut voir les n-1 couches du réseau de neuronnes comme étant la fonction du noyeau et la dernière comme une séparation linéaire sur les données plongées dans ce nouvel espace.
+La méthode Knn semble avoir de moins bons résultats que les méthodes SVM et Neural network. 
+
+Par ailleurs, on remarque que les images ayant beaucoup de pixels (les images 2 et 8 représentent 30\% des pixels) ont des moins bons taux de prédiction, ce qui pourrait indiquer que nous n'avons pas atteint le seuil de données critiques nécessaires à des résultats optimaux. Avec quelques images supplémentaires, on pourrait espérer garantir un taux de précision d'au moins 80\% avec cette méthode. 
+Notons enfin que l'image 16 a également un taux de précision très faible, en dépit de son petit combre de points. C'est la seule image ayant à la fois des zones saines et malades, il semble donc que les méthodes aient tendance à prédire le même diagnostic pour les pixels d'une même image.
+Dans les circonstances actuelles, certaines images ont des résultats très inférieurs à cette valeur moyenne, voire en-deçà de 50\%: ces méthodes ne sont donc pas assez fiable pour permettre de bien classifier les données.
+
 \tableofcontents
 
 

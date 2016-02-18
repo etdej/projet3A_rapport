@@ -2,6 +2,8 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {2.1}{\ignorespaces centre des clusters avant transformation}}{5}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces centre des clusters apr\IeC {\`e}s transformation}}{5}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces centre des clusters apr\IeC {\`e}s transformation}}{6}
 \contentsline {figure}{\numberline {2.3}{\ignorespaces Part de variance expliqu\IeC {\'e}e}}{6}
-\contentsline {figure}{\numberline {2.4}{\ignorespaces analyse de la composante principale}}{6}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces analyse de la composante principale}}{7}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces R\IeC {\'e}sultats de la m\IeC {\'e}thode SVM: proportion de bonnes pr\IeC {\'e}dictions et nombre de pixels dans l'ensemble de test, pour chaque image.}}{9}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Comparaison des taux de bonne pr\IeC {\'e}diction des diff\IeC {\'e}rentes m\IeC {\'e}hodes de classification test\IeC {\'e}es.}}{9}
