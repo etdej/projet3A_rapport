@@ -26,7 +26,25 @@
 Le résumé (abstract en anglais) de mon article.
 \end{abstract}
 
-\chapter{contexte}
+\section*{Introduction}
+
+
+Aujourd'hui, le dépistage du cancer du col de l'utérus est effectué à l'\oe il nu. Si la patiente est effectivement atteinte d'un cancer, un échantillon (appelé conisation) est prélevé, et un spécialiste découpe l'échantillon pour déterminer les zones atteintes. 
+\emph{ADM polar} cherche à détecter les cellules cancéreuses à partir d'imagerie polarimétrique. 
+L'idée à terme serait de concevoir un outil qui permette de détecter les zones effectivement atteintes \emph{in vivo}, pour ainsi mieux délimiter la zone à prélever et réduire les risques de prélèvement pour les patientes saines.
+
+
+\emph{ADM polar} fait analyser ces échantillons par un spécialiste, pour déterminer l'état (sain, malade, bénin...) des cellules le long de coupes.
+Puis, après avoir pris plusieurs images dans des configurations de polarisation différentes, \emph{ADM polar} reconstitue la matrice de Müller de l'échantillon, un ensemble de 16 images qui représentent l'état de polarisation.
+Il reste alors à déterminer la corrélation entre les valeurs dans la matrice de Müller d'une cellule et son diagnostique.
+
+
+Dans le cadre du projet de 3e année, nous avons souhaité appliquer les connaissances théoriques apprises en cours à des données réelles. Nous avons donc rejoint le projet d'\emph{ADM polar}, dans le but de détecter les cellules cancéreuses, à partir des images polarimétriques fournies par \emph{ADM polar}.
+
+
+La première étape a été la visualisation des données, pour mieux savoir quels modèles d'apprentissage seraient les plus susceptibles de porter leurs fruits. Puis, nous avons cherché à réduire la dimension du problème en sélectionnant ls paramètres les plus discriminants dans la classification des cellules. Enfin, nous avons testé différents modèles de classification et mesuré leur performance en termes de précision et de coût de calcul.
+
+\chapter{Contexte}
 \section{ADM Polar, contexte du projet}
 \section{Présentation des données}
 Pour ce projet nous disposions d'un jeu de données de $163 000$ pixels répartis sur 17 images différentes. Pour chaque pixel nous avions les 16 éléments de la matrice de Müller, leur position, leur diagnostic, et l'image correspondante.
@@ -154,20 +172,51 @@ Les résultats présentés ci dessous corresponde au taux de bonne prédiction e
 \end{tabular}
 \end{center}
 
-En utilisant les 9 éléments de la matrice de Müller Mij avec i et j différents de 1, on obtient un taux moyen de 65%
+En utilisant les 9 éléments de la matrice de Müller Mij avec i et j différents de 1, on obtient un taux moyen de 65\%.
 \paragraph{conclusion}
 Les résultats donnés par les KNN ne sont pas très bon. Piste d'explication?
 
 \subsubsection{SVM}
 \index{SVM}
-Les Machines à Vecteurs Support ou SVN sont des classifieurs qui cherchent à séparer linéairement deux ensemble de points dans un certain espace en maximisant la marge entre ces deux sets de points. Par défault (avec un noyeau linéaire), la séparation est donc nécessairement linéaire. Cependant, en transformant nos données pour les plongées dans un autre espace, souvent de dimension supérieur, on peut générer un modèle de capacité supérieur et fortement non linéaire. C'est ce qu'on appelle le Kernel trick\index{Kernel trick}
-
-Les SVM sont efficaces lorque le nombre de feature est inférieur (voir très inférieur au nombre de données). 
+Les Machines à Vecteurs Support ou SVM (Support Vector Machine) sont des classifieurs qui cherchent à séparer linéairement deux ensemble de points dans un certain espace en maximisant la marge entre ces deux sets de points. Par défault (avec un noyeau linéaire), la séparation est donc nécessairement linéaire. Cependant, en transformant nos données pour les plongées dans un autre espace, souvent de dimension supérieur, on peut générer un modèle de capacité supérieur et fortement non linéaire. C'est ce qu'on appelle le Kernel trick\index{Kernel trick}
 
 \paragraph{prétraitement utilisé}
-\paragraph{résultats (notamment graphique)}
+Les SVM sont efficaces lorque le nombre de feature est inférieur (voire très inférieur) au nombre de données. On applique donc cette méthode aux points directement, et non pas aux centres des clusters.
+
+\paragraph{résultats}
+\begin{center}
+\begin{tabular}{|c|c|}  
+  \hline
+  échantillon de test & taux de bon résultat \\
+  \hline
+  1 & 100\%\\
+  2 & 0\%\\
+  3 & 100\%\\
+  4 & 100\%\\
+  5 & 0\%\\
+  6  & 100\%\\
+  7 & 33\%\\  
+  8 & 50\%\\
+  9 & 66\%\\
+  10 & 100\%\\
+  11 & 100\%\\
+  12 & 100\%\\
+  13 & 100\%\\
+  14 & 75\%\\
+  15 & 66\%\\
+  16 & 75\%\\
+  17 & 100\%\\
+  \hline
+  moyenne & 69\%\\  
+  \hline
+\end{tabular}
+\end{center}
+
+En pondérant ces résultats par le nombre de points dans l'échantillon de test (pour que les images ayant beaucoup de pixels à classifier aient plus d'importance), on obtient un taux moyen de 65\%.
+Notons toutefois que certaines images ont des résultats très inférieurs à cette valeur moyenne, la variance de ces pourcentages est de ... \%. Cette méthode n'est pas assez fiable pour permettre de bien classifier les données (du moins à partir des échantillons à notre disposition).
+
 \paragraph{explication et piste d'amélioration}
-Le problème du Kernel trick\index{Kernel trick} est qu'il necessitte d'avoir une idée a priori du type de fonction que l'on cherche à estimer pour pouvoir utiliser un noyeau adequat. Ce n'est ici pas le cas, on ne sais pas a priori qu'elle pourrait être le type de fonction permettant de distinguer linéairement un pixel sain d'un pixel malade.
+Le problème du Kernel trick\index{Kernel trick} est qu'il necessite d'avoir une idée a priori du type de fonction que l'on cherche à estimer pour pouvoir utiliser un noyeau adequat. Ce n'est ici pas le cas, on ne sais pas a priori qu'elle pourrait être le type de fonction permettant de distinguer linéairement un pixel sain d'un pixel malade.
 
 Pour contrer ce problème, il faudrait "apprendre la fonction noyeau". C'est en quelque sorte le rôle des neural networks.\index{Neural networks}. On peut voir les n-1 couches du réseau de neuronnes comme étant la fonction du noyeau et la dernière comme une séparation linéaire sur les données plongées dans ce nouvel espace.
 \tableofcontents

@@ -1,34 +1,34 @@
 \select@language {french}
-\contentsline {chapter}{\numberline {1}contexte}{1}
-\contentsline {section}{\numberline {1.1}ADM Polar, contexte du projet}{1}
-\contentsline {section}{\numberline {1.2}Pr\IeC {\'e}sentation des donn\IeC {\'e}es}{1}
-\contentsline {subsection}{\numberline {1.2.1}la Matrice de M\IeC {\"u}ller}{1}
-\contentsline {subsection}{\numberline {1.2.2}Le Clustering}{1}
-\contentsline {chapter}{\numberline {2}Le traitement des donn\IeC {\'e}es}{3}
-\contentsline {section}{\numberline {2.1}Pr\IeC {\'e}traitement des donn\IeC {\'e}es}{3}
-\contentsline {section}{\numberline {2.2}Les diff\IeC {\'e}rentes approches de traitement des donn\IeC {\'e}es}{3}
-\contentsline {subsection}{\numberline {2.2.1}R\IeC {\'e}duction de dimension}{3}
-\contentsline {subsubsection}{PCA}{3}
-\contentsline {paragraph}{rappel de la m\IeC {\'e}thode }{3}
-\contentsline {paragraph}{pr\IeC {\'e}traitement utilis\IeC {\'e}}{3}
-\contentsline {paragraph}{r\IeC {\'e}sultats}{3}
-\contentsline {paragraph}{conclusion}{3}
-\contentsline {subsection}{\numberline {2.2.2}M\IeC {\'e}thode de classification}{6}
-\contentsline {subsubsection}{Arbre d\IeC {\'e}cisionnel et Random Forest}{6}
-\contentsline {paragraph}{rappel de la m\IeC {\'e}thode }{6}
-\contentsline {subparagraph}{Arbre d\IeC {\'e}cisionnel}{6}
-\contentsline {subparagraph}{Random Forest}{6}
-\contentsline {paragraph}{pr\IeC {\'e}traitement utilis\IeC {\'e}}{6}
-\contentsline {paragraph}{r\IeC {\'e}sultats (notamment graphique)}{6}
-\contentsline {paragraph}{explication}{6}
-\contentsline {paragraph}{piste d'am\IeC {\'e}lioration}{6}
-\contentsline {subsubsection}{K plus proche voisin}{6}
-\contentsline {paragraph}{rappel de la m\IeC {\'e}thode }{6}
-\contentsline {paragraph}{pr\IeC {\'e}traitement utilis\IeC {\'e}}{6}
-\contentsline {paragraph}{r\IeC {\'e}sultats}{6}
-\contentsline {subparagraph}{}{6}
-\contentsline {paragraph}{conclusion}{7}
-\contentsline {subsubsection}{SVM}{7}
+\contentsline {chapter}{\numberline {1}Contexte}{2}
+\contentsline {section}{\numberline {1.1}ADM Polar, contexte du projet}{2}
+\contentsline {section}{\numberline {1.2}Pr\IeC {\'e}sentation des donn\IeC {\'e}es}{2}
+\contentsline {subsection}{\numberline {1.2.1}la Matrice de M\IeC {\"u}ller}{2}
+\contentsline {subsection}{\numberline {1.2.2}Le Clustering}{2}
+\contentsline {chapter}{\numberline {2}Le traitement des donn\IeC {\'e}es}{4}
+\contentsline {section}{\numberline {2.1}Pr\IeC {\'e}traitement des donn\IeC {\'e}es}{4}
+\contentsline {section}{\numberline {2.2}Les diff\IeC {\'e}rentes approches de traitement des donn\IeC {\'e}es}{4}
+\contentsline {subsection}{\numberline {2.2.1}R\IeC {\'e}duction de dimension}{4}
+\contentsline {subsubsection}{PCA}{4}
+\contentsline {paragraph}{rappel de la m\IeC {\'e}thode }{4}
+\contentsline {paragraph}{pr\IeC {\'e}traitement utilis\IeC {\'e}}{4}
+\contentsline {paragraph}{r\IeC {\'e}sultats}{4}
+\contentsline {paragraph}{conclusion}{4}
+\contentsline {subsection}{\numberline {2.2.2}M\IeC {\'e}thode de classification}{7}
+\contentsline {subsubsection}{Arbre d\IeC {\'e}cisionnel et Random Forest}{7}
+\contentsline {paragraph}{rappel de la m\IeC {\'e}thode }{7}
+\contentsline {subparagraph}{Arbre d\IeC {\'e}cisionnel}{7}
+\contentsline {subparagraph}{Random Forest}{7}
 \contentsline {paragraph}{pr\IeC {\'e}traitement utilis\IeC {\'e}}{7}
 \contentsline {paragraph}{r\IeC {\'e}sultats (notamment graphique)}{7}
-\contentsline {paragraph}{explication et piste d'am\IeC {\'e}lioration}{7}
+\contentsline {paragraph}{explication}{7}
+\contentsline {paragraph}{piste d'am\IeC {\'e}lioration}{7}
+\contentsline {subsubsection}{K plus proche voisin}{7}
+\contentsline {paragraph}{rappel de la m\IeC {\'e}thode }{7}
+\contentsline {paragraph}{pr\IeC {\'e}traitement utilis\IeC {\'e}}{7}
+\contentsline {paragraph}{r\IeC {\'e}sultats}{7}
+\contentsline {subparagraph}{}{7}
+\contentsline {paragraph}{conclusion}{8}
+\contentsline {subsubsection}{SVM}{8}
+\contentsline {paragraph}{pr\IeC {\'e}traitement utilis\IeC {\'e}}{8}
+\contentsline {paragraph}{r\IeC {\'e}sultats}{8}
+\contentsline {paragraph}{explication et piste d'am\IeC {\'e}lioration}{9}
