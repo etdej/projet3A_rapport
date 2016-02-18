@@ -36,6 +36,7 @@ Ces Pixels sont répartis en $4/5$ de sains et $1/5$ de malades. L'affichage des
 mettre les images ici. (toutes?)
 
 \subsection{la Matrice de Müller}
+\index{Matrice de Muller}
 Les données sont obtenues par polarisation de la lumière. De la lumière polarisée est envoyée sur l'échantillon, réfléchi par celui ci est analysé ensuite.
 La matrice de Müller est obtenue à partir de l'analyse de la polarisation de la lumière réfléchie. Le postulat du laboratoire sur lequel repose tout le traitement des données est que les cellules saines et malades polarisent différemment la lumière. Cela implique qu'il est possible de reconnaître une cellule malade par la polarisation de la lumière réfléchie.
 Le PICM se bases pour cela d'observations de relation entre les images polarisées et le diagnostic. 
@@ -103,9 +104,12 @@ Par contre, la projection de la PCA en 2 dimensions ne nous permet pas de sépar
 
 \subsubsection{Arbre décisionnel et Random Forest}
 \paragraph{rappel de la méthode }
-\subparagarph{Arbre décisionnel} 
+
+\subparagraph{Arbre décisionnel} 
+\index{Arbre de décision}
 L'arbre décisionnel est une méthode de classification très classique, qui donne souvent de bon résultats. L'idée est trouver un hyperplan qui sépare au mieux les données (parfois très simple, sur une variable uniquement) et de recommencer cela sur les deux sous ensembles de données ainsi crées. On isole ainsi les zones où les points sont similaires, et l'on peut ainsi prédire le diagnostique d'un pixel, les hyperplans permettant de construire un arbre de décision.
 \subparagraph{Random Forest}
+\index{arbre}
 La Random Forest ou forêt d'arbre, est juste un ensemble d'arbres de décision. Les données sont divisées aléatoirement, puis l'on associe à chaque sous ensemble un arbre de décision. Le résultat de la prédiction se fait par vote, chaque arbre donne sa prédiction, la prédiction majoritaire l'emporte.
 \paragraph{prétraitement utilisé}
 \paragraph{résultats (notamment graphique)}
@@ -154,16 +158,20 @@ En utilisant les 9 éléments de la matrice de Müller Mij avec i et j différen
 \paragraph{conclusion}
 Les résultats donnés par les KNN ne sont pas très bon. Piste d'explication?
 
-\subsection{SVM}
-\paragraph{rappel de la méthode}
+\subsubsection{SVM}
+\index{SVM}
+Les Machines à Vecteurs Support ou SVN sont des classifieurs qui cherchent à séparer linéairement deux ensemble de points dans un certain espace en maximisant la marge entre ces deux sets de points. Par défault (avec un noyeau linéaire), la séparation est donc nécessairement linéaire. Cependant, en transformant nos données pour les plongées dans un autre espace, souvent de dimension supérieur, on peut générer un modèle de capacité supérieur et fortement non linéaire. C'est ce qu'on appelle le Kernel trick\index{Kernel trick}
+
+Les SVM sont efficaces lorque le nombre de feature est inférieur (voir très inférieur au nombre de données). 
+
 \paragraph{prétraitement utilisé}
 \paragraph{résultats (notamment graphique)}
-\paragraph{explication}
-\paragraph{piste d'amélioration}
+\paragraph{explication et piste d'amélioration}
+Le problème du Kernel trick\index{Kernel trick} est qu'il necessitte d'avoir une idée a priori du type de fonction que l'on cherche à estimer pour pouvoir utiliser un noyeau adequat. Ce n'est ici pas le cas, on ne sais pas a priori qu'elle pourrait être le type de fonction permettant de distinguer linéairement un pixel sain d'un pixel malade.
+
+Pour contrer ce problème, il faudrait "apprendre la fonction noyeau". C'est en quelque sorte le rôle des neural networks.\index{Neural networks}. On peut voir les n-1 couches du réseau de neuronnes comme étant la fonction du noyeau et la dernière comme une séparation linéaire sur les données plongées dans ce nouvel espace.
 \tableofcontents
 
-
-Bla\index{bla} bla bla
 
 \listoffigures
 \listoftables
