@@ -4,32 +4,32 @@
 \contentsline {section}{\numberline {1.2}Pr\IeC {\'e}sentation des donn\IeC {\'e}es}{2}
 \contentsline {subsection}{\numberline {1.2.1}la Matrice de M\IeC {\"u}ller}{2}
 \contentsline {subsection}{\numberline {1.2.2}Le Clustering}{2}
-\contentsline {chapter}{\numberline {2}Le traitement des donn\IeC {\'e}es}{4}
-\contentsline {section}{\numberline {2.1}Pr\IeC {\'e}traitement des donn\IeC {\'e}es}{4}
-\contentsline {section}{\numberline {2.2}Les diff\IeC {\'e}rentes approches de traitement des donn\IeC {\'e}es}{4}
-\contentsline {subsection}{\numberline {2.2.1}La visualisation des donn\IeC {\'e}es}{4}
-\contentsline {subsection}{\numberline {2.2.2}R\IeC {\'e}duction de dimension}{6}
-\contentsline {subsubsection}{PCA}{6}
-\contentsline {paragraph}{rappel de la m\IeC {\'e}thode }{6}
-\contentsline {paragraph}{pr\IeC {\'e}traitement utilis\IeC {\'e}}{6}
-\contentsline {paragraph}{r\IeC {\'e}sultats}{8}
-\contentsline {paragraph}{conclusion}{8}
-\contentsline {subsection}{\numberline {2.2.3}M\IeC {\'e}thode de classification}{8}
-\contentsline {subsubsection}{Arbre d\IeC {\'e}cisionnel et Random Forest}{8}
-\contentsline {paragraph}{rappel de la m\IeC {\'e}thode }{8}
-\contentsline {subparagraph}{Arbre d\IeC {\'e}cisionnel}{8}
-\contentsline {subparagraph}{Random Forest}{8}
-\contentsline {paragraph}{pr\IeC {\'e}traitement utilis\IeC {\'e}}{8}
-\contentsline {paragraph}{r\IeC {\'e}sultats (notamment graphique)}{8}
-\contentsline {paragraph}{explication}{8}
-\contentsline {paragraph}{piste d'am\IeC {\'e}lioration}{8}
-\contentsline {subsubsection}{K plus proche voisin}{8}
-\contentsline {paragraph}{rappel de la m\IeC {\'e}thode }{8}
-\contentsline {paragraph}{pr\IeC {\'e}traitement utilis\IeC {\'e}}{8}
+\contentsline {chapter}{\numberline {2}Le traitement des donn\IeC {\'e}es}{5}
+\contentsline {section}{\numberline {2.1}Pr\IeC {\'e}traitement des donn\IeC {\'e}es}{5}
+\contentsline {section}{\numberline {2.2}Les diff\IeC {\'e}rentes approches de traitement des donn\IeC {\'e}es}{5}
+\contentsline {subsection}{\numberline {2.2.1}La visualisation des donn\IeC {\'e}es}{5}
+\contentsline {subsection}{\numberline {2.2.2}R\IeC {\'e}duction de dimension}{7}
+\contentsline {subsubsection}{PCA}{7}
+\contentsline {paragraph}{rappel de la m\IeC {\'e}thode }{7}
+\contentsline {paragraph}{pr\IeC {\'e}traitement utilis\IeC {\'e}}{7}
 \contentsline {paragraph}{r\IeC {\'e}sultats}{9}
-\contentsline {subparagraph}{}{9}
 \contentsline {paragraph}{conclusion}{9}
-\contentsline {subsubsection}{SVM}{9}
+\contentsline {subsection}{\numberline {2.2.3}M\IeC {\'e}thode de classification}{9}
+\contentsline {subsubsection}{Arbre d\IeC {\'e}cisionnel et Random Forest}{9}
+\contentsline {paragraph}{rappel de la m\IeC {\'e}thode }{9}
+\contentsline {subparagraph}{Arbre d\IeC {\'e}cisionnel}{9}
+\contentsline {subparagraph}{Random Forest}{9}
 \contentsline {paragraph}{pr\IeC {\'e}traitement utilis\IeC {\'e}}{9}
-\contentsline {paragraph}{r\IeC {\'e}sultats}{9}
-\contentsline {paragraph}{explication et piste d'am\IeC {\'e}lioration}{10}
+\contentsline {paragraph}{r\IeC {\'e}sultats (notamment graphique)}{9}
+\contentsline {paragraph}{explication}{9}
+\contentsline {paragraph}{piste d'am\IeC {\'e}lioration}{9}
+\contentsline {subsubsection}{K plus proche voisin}{10}
+\contentsline {paragraph}{rappel de la m\IeC {\'e}thode }{10}
+\contentsline {paragraph}{pr\IeC {\'e}traitement utilis\IeC {\'e}}{10}
+\contentsline {paragraph}{r\IeC {\'e}sultats}{10}
+\contentsline {subparagraph}{}{10}
+\contentsline {paragraph}{conclusion}{11}
+\contentsline {subsubsection}{SVM}{11}
+\contentsline {paragraph}{pr\IeC {\'e}traitement utilis\IeC {\'e}}{11}
+\contentsline {paragraph}{r\IeC {\'e}sultats}{11}
+\contentsline {paragraph}{explication et piste d'am\IeC {\'e}lioration}{11}

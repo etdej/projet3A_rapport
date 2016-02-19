@@ -50,8 +50,27 @@ La première étape a été la visualisation des données, pour mieux savoir que
 Pour ce projet nous disposions d'un jeu de données de $163 000$ pixels répartis sur 17 images différentes. Pour chaque pixel nous avions les 16 éléments de la matrice de Müller, leur position, leur diagnostic, et l'image correspondante.
 Ces Pixels sont répartis en $4/5$ de sains et $1/5$ de malades. L'affichage des pixels nous montre que dans chaque image, les pixels sont répartis en zones au diagnostic identique. Sur les $17$ images, $11$ possèdent que des zones saines, une a une zone saine et une zone malade et les $5$ dernières ont que des zones malades. Le nombre d'images étant assez limité il n'a été facile de trouver des points communs aux pixels sain et aux pixels malades.
 
-
-mettre les images ici. (toutes?)
+\begin{figure}[htbp]
+  \caption{répartition des zones}
+  \centering
+  \includegraphics[width=3cm]{piece(1).jpg}
+  \includegraphics[width=3cm]{piece(2).jpg}
+  \includegraphics[width=3cm]{piece(3).jpg}
+  \includegraphics[width=3cm]{piece(4).jpg}
+  \includegraphics[width=3cm]{piece(5).jpg}
+  \includegraphics[width=3cm]{piece(6).jpg}
+  \includegraphics[width=3cm]{piece(7).jpg}
+  \includegraphics[width=3cm]{piece(8).jpg}
+  \includegraphics[width=3cm]{piece(9).jpg}
+  \includegraphics[width=3cm]{piece(10).jpg}
+  \includegraphics[width=3cm]{piece(11).jpg}
+  \includegraphics[width=3cm]{piece(12).jpg}
+  \includegraphics[width=3cm]{piece(13).jpg}
+  \includegraphics[width=3cm]{piece(14).jpg}
+  \includegraphics[width=3cm]{piece(15).jpg}
+  \includegraphics[width=3cm]{piece(16).jpg}
+  \includegraphics[width=3cm]{piece(17).jpg}
+\end{figure}
 
 \subsection{la Matrice de Müller}
 \index{Matrice de Muller}
@@ -164,10 +183,18 @@ L'arbre décisionnel est une méthode de classification très classique, qui don
 \index{arbre}
 La Random Forest ou forêt d'arbre, est juste un ensemble d'arbres de décision. Les données sont divisées aléatoirement, puis l'on associe à chaque sous ensemble un arbre de décision. Le résultat de la prédiction se fait par vote, chaque arbre donne sa prédiction, la prédiction majoritaire l'emporte.
 \paragraph{prétraitement utilisé}
+Nous avons commencé à apprendre sur toutes les données. Au début nous avions uniquement les pixels, sans les images associés, puis pour préciser les résultats et limiter le sur-apprentissage nous les avons classés par image. Nous avons appris au début sur tous les paramètres de la matrice de Müller, puis uniquement sur les 6 éléments significatifs.
 \paragraph{résultats (notamment graphique)}
+L'apprentissage sur les 16 éléments de la matrice de Müller a résulté dans fort sur-apprentissage : l'arbre de décision réussissait à retrouver l'image de provenance, la forte corrélation entre image et diagnostic ne nous permet donc pas d'aller plus loin. L'apprentissage sur 16 images et le test sur la 17éme a permis de dévoiler ce sur-apprentissage, avec des performances renversées et aléatoires. Sur la figure qui suit on peut voir des résultats très élevés (de l'ordre de 95\%) qui témoignent plus d'un sur-apprentissage que d'un réel résultat. En effet la séparation de par image entre ensemble de test et d'apprentissage donne des résultats beaucoup plus mitigés (autour de 40\%). La restriction à 6 éléments de la matrice n'améliore pas la performance. 
+\begin{figure}[htbp]
+  \caption{résultats de la Random forest (pixels mélangés)}
+  \centering
+  \includegraphics[width=10cm]{RandomForestPerf.png}
+\end{figure}
 \paragraph{explication}
+Le faible nombre d'images à diagnostic non uniforme conduit l'algorithme à choisir l'image pour déterminer le diagnostic, les différences entre les images étant plus importantes que les différences de diagnostic. L'apprentissage est donc nécessairement biaisé. 
 \paragraph{piste d'amélioration}
-
+Pour résoudre ce problème il faudrait avoir accès à des images au diagnostic varié, images sur lesquelles un réel apprentissage est possible. La difficulté à obtenir ces images nous a poussé a changer de méthode d'apprentissage et à pousser plus loin la compréhension que l'on avait des données.
 \subsubsection{K plus proche voisin}
 \paragraph{rappel de la méthode }
 La méthode des k plus proche voisin consiste à essayer de prédire l’état d'un nouveaux point en se basant sur l'état de ses voisins les plus proches. Cette méthode a l'avantage de pouvoir classer les données selon des schémas non linéaires. Par contre, c'est une méthode sensible à la dimension. 
@@ -215,7 +242,7 @@ Les résultats donnés par les KNN ne sont pas très bon. Piste d'explication?
 Les Machines à Vecteurs Support ou SVM (Support Vector Machine) sont des classifieurs qui cherchent à séparer linéairement deux ensemble de points dans un certain espace en maximisant la marge entre ces deux sets de points. Par défault (avec un noyeau linéaire), la séparation est donc nécessairement linéaire. Cependant, en transformant nos données pour les plongées dans un autre espace, souvent de dimension supérieur, on peut générer un modèle de capacité supérieur et fortement non linéaire. C'est ce qu'on appelle le Kernel trick\index{Kernel trick}
 
 \paragraph{prétraitement utilisé}
-Les SVM sont efficaces lorque le nombre de feature est inférieur (voire très inférieur) au nombre de données. On applique donc cette méthode aux points directement, et non pas aux centres des clusters.
+Les SVM sont efficaces lorsque le nombre de feature est inférieur (voire très inférieur) au nombre de données. On applique donc cette méthode aux points directement, et non pas aux centres des clusters.
 
 \paragraph{résultats}
 \begin{figure}[htbp]
@@ -236,7 +263,7 @@ Pour contrer ce problème, il faudrait "apprendre la fonction noyeau". C'est en 
 \section*{Résultats}
 
 \begin{figure}[htbp]
-  \caption{Comparaison des taux de bonne prédiction des différentes méhodes de classification testées.}
+  \caption{Comparaison des taux de bonne prédiction des différentes méthodes de classification testées.}
   \centering
   \includegraphics[width=10cm]{Compared_CV.png}
 \end{figure}
