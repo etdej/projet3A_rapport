@@ -17,7 +17,7 @@
 	\textsc{Dejoie} Etienne	
 	}
 \date{\today}
-\makeindex
+\makeindex 
 \begin{document}
 
 \maketitle
@@ -26,25 +26,7 @@
 Le résumé (abstract en anglais) de mon article.
 \end{abstract}
 
-\section*{Introduction}
-
-
-Aujourd'hui, le dépistage du cancer du col de l'utérus est effectué à l'\oe il nu. Si la patiente est effectivement atteinte d'un cancer, un échantillon (appelé conisation) est prélevé, et un spécialiste découpe l'échantillon pour déterminer les zones atteintes. 
-\emph{ADM polar} cherche à détecter les cellules cancéreuses à partir d'imagerie polarimétrique. 
-L'idée à terme serait de concevoir un outil qui permette de détecter les zones effectivement atteintes \emph{in vivo}, pour ainsi mieux délimiter la zone à prélever et réduire les risques de prélèvement pour les patientes saines.
-
-
-\emph{ADM polar} fait analyser ces échantillons par un spécialiste, pour déterminer l'état (sain, malade, bénin...) des cellules le long de coupes.
-Puis, après avoir pris plusieurs images dans des configurations de polarisation différentes, \emph{ADM polar} reconstitue la matrice de Müller de l'échantillon, un ensemble de 16 images qui représentent l'état de polarisation.
-Il reste alors à déterminer la corrélation entre les valeurs dans la matrice de Müller d'une cellule et son diagnostique.
-
-
-Dans le cadre du projet de 3e année, nous avons souhaité appliquer les connaissances théoriques apprises en cours à des données réelles. Nous avons donc rejoint le projet d'\emph{ADM polar}, dans le but de détecter les cellules cancéreuses, à partir des images polarimétriques fournies par \emph{ADM polar}.
-
-
-La première étape a été la visualisation des données, pour mieux savoir quels modèles d'apprentissage seraient les plus susceptibles de porter leurs fruits. Puis, nous avons cherché à réduire la dimension du problème en sélectionnant ls paramètres les plus discriminants dans la classification des cellules. Enfin, nous avons testé différents modèles de classification et mesuré leur performance en termes de précision et de coût de calcul.
-
-\chapter{Contexte}
+\chapter{contexte}
 \section{ADM Polar, contexte du projet}
 \section{Présentation des données}
 Pour ce projet nous disposions d'un jeu de données de $163 000$ pixels répartis sur 17 images différentes. Pour chaque pixel nous avions les 16 éléments de la matrice de Müller, leur position, leur diagnostic, et l'image correspondante.
@@ -80,62 +62,28 @@ Le Prétraitement de données est l'étape essentielle qui précède l'apprentis
 Les différents types de prétraitements que l'on peut faire avant de traiter les données
 \section{Les différentes approches de traitement des données}
 
-\subsection{La visualisation des données}
-
-La première étape du traitement des données est sa visualisation, pour déterminer les modèles de classification les plus prometteurs.\\
-
-L'affichage des 16 images de la matrice de Müller des échantillons nous montre que les éléments diagonaux se distinguent des autres: ils correspondent à la conservation d'une composante de polarisation (rectiligne, circulaire...), et il y a donc une variance des valeurs bien plus importantes que sur les autre composantes. Par ailleurs, les images de la première ligne et de la première colonne paraissent très bruitées. 
-
-A partir de ces images et de l'interprétation des chercheurs, nous avons déduit que la première colonne et la première ligne ne permettraient pas de discriminer les cellules. De plus, les données sont normalisées par rapport à l'élément M11 de la matrice de Müller. Or, cet élément correspond à l'intensité lumineuse de l'échantillon (autrement dit, c'est une image en noir et blanc de l'échantillon). Cet élément dépend donc fortement des conditions de l'expérience, et en particulier certaines zones peuvent être très lumineuses si elles sont éclairées, ce qui est évidemment indépendant du diagnostique des cellules. Nous avons donc décidé de multiplier les autres images par la composant M11, afin d'obtenir des valeurs comparables d'une image à l'autre. Nous avons donc décidé de réduire la dimension de 16 à 9 voire 6, en ne sélectionnant que les éléments Mij avec i et j différents de 1, voire uniquement les éléments extradiagonaux, pour que les résultats ne soient pas faussés par la forte différence de variance entre les éléments diagonaux et extradiagonaux de la matrice. 
-
-
-Enfin, pour mesurer la performance d'une méthode de classification, nous avons décidé de tester sur des images indépendantes des images d'apprentissage. Tester les pixels d'une même image risque trop fortement de créer un phénomène de surapprentissage (overfitting), en classant les pixels comme leurs voisins, ce qui n'a pas d'intérêt.
-
-
-Nous avons ensuite décidé de visualiser les données dans un espace de plus petite dimension. En le projetant dans un espace de dimension 2 optimal (voir la section PCA), on obtient l'image suivante:
-\begin{figure}[htbp]
-  \caption{Affichage des points et des clusters en dimension 2}
-  \centering
-  \includegraphics[width=10cm]{visualisation.png}
-\end{figure}
-
-Chaque pixel est représenté par un petit point, vert s'il est sain et rouge s'il est malade. Les gros points sont les centres des clusters, qui représentent le milieu d'un ensemble de points proches d'une même image. On a retiré ici les valeurs abhérentes, certains points isolés étant très éloignés de tous les autres.
-
-
-Cette visualisation des données nous apprend que les points malades sont moins dispersés que les points sains, et que les moyennes des points sains et malades sont décalées.
-Plus précisément, on peut alors afficher les densités de points situés à une certaine distance (dans l'espace de dimension 6) de la moyenne de tous les points.
-
-\begin{figure}[htbp]
-  \caption{Densité de points en fonction de leur distance à la moyenne des points}
-  \centering
-  \includegraphics[width=10cm]{density.png}
-\end{figure}
-
-On remarque qu'à proximité de ce centre, il y a plus de points malades que sains, bien qu'il y ait quatre fois plus de points sains au total. Les points sains sont pour la plupart bien plus éloignés. Cette distance semble donc être un facteur intéressant à prendre en compte pour la suite.
-
-
 \subsection{Réduction de dimension}
 \subsubsection{PCA}
 \paragraph{rappel de la méthode }
 L'Analyse en Composantes Principales (ou PCA) consiste à essayer de représenter les données dans un espace de plus petites dimensions. Les vecteurs directeurs du nouvel espace maximise la variance entre les données. Nous présentons ici les résultats pour la dimension 2.
 \paragraph{prétraitement utilisé}
 Nous effectuons cette PCA sur les centres des clusters préalablement présentés (cf 1.1.1). Les centres des clusters représentent de manière fidèle l'ensemble des points qu'il rassemble. Chaque cluster est représenté par un vecteur d'éléments de la matrice de Müller. Tous les éléments de Müller sont gardés à l’exception de la première ligne et première colonne qui ne sont pas a priori pertinentes (d'après les informations des physiciens)
-\begin{figure}[htbp]
+\begin{figure}
   \caption{centre des clusters avant transformation}
   \centering
   \includegraphics[width=10cm]{PCA_0.png}
 \end{figure}
-\begin{figure}[htbp]
+\begin{figure}
   \caption{centre des clusters après transformation}
   \centering
   \includegraphics[width=10cm]{PCA_1.png}
 \end{figure}
-\begin{figure}[htbp]
+\begin{figure}
   \caption{Part de variance expliquée}
   \centering
   \includegraphics[width=10cm]{PCA_3.png}
 \end{figure}
-\begin{figure}[htbp]
+\begin{figure}
   \caption{analyse de la composante principale}
   \centering
   \includegraphics[width=10cm]{PCA_2.png}
@@ -161,7 +109,7 @@ Par contre, la projection de la PCA en 2 dimensions ne nous permet pas de sépar
 \index{Arbre de décision}
 L'arbre décisionnel est une méthode de classification très classique, qui donne souvent de bon résultats. L'idée est trouver un hyperplan qui sépare au mieux les données (parfois très simple, sur une variable uniquement) et de recommencer cela sur les deux sous ensembles de données ainsi crées. On isole ainsi les zones où les points sont similaires, et l'on peut ainsi prédire le diagnostique d'un pixel, les hyperplans permettant de construire un arbre de décision.
 \subparagraph{Random Forest}
-\index{arbre}
+\index{Arbre de décision}
 La Random Forest ou forêt d'arbre, est juste un ensemble d'arbres de décision. Les données sont divisées aléatoirement, puis l'on associe à chaque sous ensemble un arbre de décision. Le résultat de la prédiction se fait par vote, chaque arbre donne sa prédiction, la prédiction majoritaire l'emporte.
 \paragraph{prétraitement utilisé}
 \paragraph{résultats (notamment graphique)}
@@ -206,67 +154,22 @@ Les résultats présentés ci dessous corresponde au taux de bonne prédiction e
 \end{tabular}
 \end{center}
 
-En utilisant les 9 éléments de la matrice de Müller Mij avec i et j différents de 1, on obtient un taux moyen de 65\%.
+En utilisant les 9 éléments de la matrice de Müller Mij avec i et j différents de 1, on obtient un taux moyen de 65%
 \paragraph{conclusion}
 Les résultats donnés par les KNN ne sont pas très bon. Piste d'explication?
 
 \subsubsection{SVM}
 \index{SVM}
-Les Machines à Vecteurs Support ou SVM (Support Vector Machine) sont des classifieurs qui cherchent à séparer linéairement deux ensemble de points dans un certain espace en maximisant la marge entre ces deux sets de points. Par défault (avec un noyeau linéaire), la séparation est donc nécessairement linéaire. Cependant, en transformant nos données pour les plongées dans un autre espace, souvent de dimension supérieur, on peut générer un modèle de capacité supérieur et fortement non linéaire. C'est ce qu'on appelle le Kernel trick\index{Kernel trick}
+Les Machines à Vecteurs Support ou SVN sont des classifieurs qui cherchent à séparer linéairement deux ensemble de points dans un certain espace en maximisant la marge entre ces deux sets de points. Par défault (avec un noyeau linéaire), la séparation est donc nécessairement linéaire. Cependant, en transformant nos données pour les plongées dans un autre espace, souvent de dimension supérieur, on peut générer un modèle de capacité supérieur et fortement non linéaire. C'est ce qu'on appelle le Kernel trick\index{Kernel trick}
+
+Les SVM sont efficaces lorque le nombre de feature est inférieur (voir très inférieur au nombre de données). 
 
 \paragraph{prétraitement utilisé}
-Les SVM sont efficaces lorque le nombre de feature est inférieur (voire très inférieur) au nombre de données. On applique donc cette méthode aux points directement, et non pas aux centres des clusters.
-
-\paragraph{résultats}
-\begin{figure}[htbp]
-  \caption{Résultats de la méthode SVM: proportion de bonnes prédictions et nombre de pixels dans l'ensemble de test, pour chaque image.}
-  \centering
-  \includegraphics[width=10cm]{SVM_CV.png}
-\end{figure}
-
-La moyenne de ces prédictions est de 83\%.
-Pourtant, en pondérant ces résultats par le nombre de points dans l'échantillon de test (pour que les images ayant beaucoup de pixels à classifier aient plus d'importance), on obtient un taux moyen de seulement 76\%. En effet, les images ayant beaucoup de pixels ont des moins bons taux de prédiction, ce qui pourrait indiquer que nous n'avons pas atteint le seuil de données critiques nécessaires à des résultats optimaux. Avec quelques images supplémentaires, on pourrait espérer garantir un taux de précision d'au moins 80\% avec cette méthode. 
-Dans les circonstances actuelles, certaines images ont des résultats très inférieurs à cette valeur moyenne, voire en-deçà de 50\%: cette méthode n'est donc pas assez fiable pour permettre de bien classifier les données.
-
+\paragraph{résultats (notamment graphique)}
 \paragraph{explication et piste d'amélioration}
-Le problème du Kernel trick\index{Kernel trick} est qu'il necessite d'avoir une idée a priori du type de fonction que l'on cherche à estimer pour pouvoir utiliser un noyeau adequat. Ce n'est ici pas le cas, on ne sait pas a priori qu'elle pourrait être le type de fonction permettant de distinguer linéairement un pixel sain d'un pixel malade.
+Le problème du Kernel trick\index{Kernel trick} est qu'il necessitte d'avoir une idée a priori du type de fonction que l'on cherche à estimer pour pouvoir utiliser un noyeau adequat. Ce n'est ici pas le cas, on ne sais pas a priori qu'elle pourrait être le type de fonction permettant de distinguer linéairement un pixel sain d'un pixel malade.
 
 Pour contrer ce problème, il faudrait "apprendre la fonction noyeau". C'est en quelque sorte le rôle des neural networks.\index{Neural networks}. On peut voir les n-1 couches du réseau de neuronnes comme étant la fonction du noyeau et la dernière comme une séparation linéaire sur les données plongées dans ce nouvel espace.
-
-\section*{Résultats}
-
-\begin{figure}[htbp]
-  \caption{Comparaison des taux de bonne prédiction des différentes méhodes de classification testées.}
-  \centering
-  \includegraphics[width=10cm]{Compared_CV.png}
-\end{figure}
-
-\begin{center}
-Moyenne des taux de précision\\
-
-\begin{tabular}{|c|c|c|}  
-  \hline
-  Méthode & Moyenne simple & Moyenne pondérée\\
-  \hline
-  KNN & 73.41 & 65.75\\
-  Neural Network & 80.49 & 71.70\\  
-  SVM & 82.56 & 75.65\\
-  \hline
-  Maximum & 85.78 & 79.17\\
-  \hline
-\end{tabular}
-\end{center}
-
-Ce tableau présente les taux de précision moyens des méthodes précédentes, soit en moyennant sur chaque image, soit en pondérant les résultats par le nombre de pixels de l'image (ainsi, chaque pixel intervient 1 fois dans le calcul final, selon sa classification à partir de 16 autres images).
-Enfin, on calcule le taux de précision maximal pour les méthodes de classification précédentes, image par image. Si l'on combine les méthodes précédentes, on ne peut pas espérer dépasser cette valeur.
-
-
-La méthode Knn semble avoir de moins bons résultats que les méthodes SVM et Neural network. 
-
-Par ailleurs, on remarque que les images ayant beaucoup de pixels (les images 2 et 8 représentent 30\% des pixels) ont des moins bons taux de prédiction, ce qui pourrait indiquer que nous n'avons pas atteint le seuil de données critiques nécessaires à des résultats optimaux. Avec quelques images supplémentaires, on pourrait espérer garantir un taux de précision d'au moins 80\% avec cette méthode. 
-Notons enfin que l'image 16 a également un taux de précision très faible, en dépit de son petit combre de points. C'est la seule image ayant à la fois des zones saines et malades, il semble donc que les méthodes aient tendance à prédire le même diagnostic pour les pixels d'une même image.
-Dans les circonstances actuelles, certaines images ont des résultats très inférieurs à cette valeur moyenne, voire en-deçà de 50\%: ces méthodes ne sont donc pas assez fiable pour permettre de bien classifier les données.
-
 \tableofcontents
 
 
