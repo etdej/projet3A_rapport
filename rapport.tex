@@ -107,12 +107,12 @@ L'Analyse en Composantes Principales (ou PCA) consiste à essayer de représente
 \paragraph{prétraitement utilisé}
 Nous effectuons cette PCA sur les centres des clusters préalablement présentés (cf 1.1.1). Les centres des clusters représentent de manière fidèle l'ensemble des points qu'il rassemble. Chaque cluster est représenté par un vecteur d'éléments de la matrice de Müller. Tous les éléments de Müller sont gardés à l’exception de la première ligne et première colonne qui ne sont pas a priori pertinentes (d'après les informations des physiciens)
 \begin{figure}
-  \caption{Centre des clusters avant transformation}
+  \caption{centre des clusters avant transformation}
   \centering
   \includegraphics[width=10cm]{PCA_0.png}
 \end{figure}
 \begin{figure}
-  \caption{Centre des clusters après transformation}
+  \caption{centre des clusters après transformation}
   \centering
   \includegraphics[width=10cm]{PCA_1.png}
 \end{figure}
@@ -122,7 +122,7 @@ Nous effectuons cette PCA sur les centres des clusters préalablement présenté
   \includegraphics[width=10cm]{PCA_3.png}
 \end{figure}
 \begin{figure}
-  \caption{Analyse de la composante principale}
+  \caption{analyse de la composante principale}
   \centering
   \includegraphics[width=10cm]{PCA_2.png}
 \end{figure}
@@ -152,7 +152,7 @@ Nous avons commencé à apprendre sur toutes les données. Au début nous avions
 \paragraph{Résultats}
 L'apprentissage sur les 16 éléments de la matrice de Müller a résulté dans fort sur-apprentissage : l'arbre de décision réussissait à retrouver l'image de provenance, la forte corrélation entre image et diagnostic ne nous permet donc pas d'aller plus loin. L'apprentissage sur 16 images et le test sur la 17éme a permis de dévoiler ce sur-apprentissage, avec des performances renversées et aléatoires. Sur la figure qui suit on peut voir des résultats très élevés (de l'ordre de 95\%) qui témoignent plus d'un sur-apprentissage que d'un réel résultat. En effet la séparation de par image entre ensemble de test et d'apprentissage donne des résultats beaucoup plus mitigés (autour de 40\%). La restriction à 6 éléments de la matrice n'améliore pas la performance. 
 \begin{figure}[htbp]
-  \caption{Résultats de la Random forest (pixels mélangés)}
+  \caption{résultats de la Random forest (pixels mélangés)}
   \centering
   \includegraphics[width=10cm]{RandomForestPerf.png}
 \end{figure}
@@ -233,11 +233,6 @@ J(\theta)= \frac{1}{m} \sum_{i=1}^m \sum_{k=1}^K -y_k^{(i)} log((h_{\theta}(x^{(
 \end{split}
 \end{equation} 
 
-\begin{figure}[H]
-  \centering  
-  \caption{Schéma éxplitaif représetant un réseau de neuronnes}
-  \includegraphics[width=7cm]{nn_explanation.png}
-\end{figure}
 
 \paragraph{prétraitement}
 Le prétraitement correspond ici aux choix des données à mettre dans la première couche. Nous avons utilisé un maximum d'input dans un premier temps. Par la suite nous avons pu estimer le poids final de chacun de  ces inputs pour évaluer quels étaient les inputs important pour la prise de décision. Après plusieurs itérations et tests, nous avons conclus que les éléments les plus importants étaient les suivants :
@@ -311,5 +306,4 @@ Ce Projet de Big Data nous a permis de mettre en place un classifieur sur des im
 
 \tableofcontents
 \listoffigures
-\printindex
 \end{document}
