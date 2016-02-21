@@ -233,7 +233,7 @@ Pour résoudre ce problème, il faudrait "apprendre la fonction noyau". C'est en
 
 \subsection{Réseaux de Neurones}
 
-Comme évoqué précédemment, les Neural Networks sont une piste naturels à explorer lorsque l’on n’a pas d'idée a priori de la forme du "bon" noyau à utiliser dans les SVMs. Un réseau de neurones consiste en une succession de couche de neurones. La première couche de neurones correspond aux données d'entrée et la dernière à la prédiction souhaitée. L'avantage principal des réseaux neuronaux est d'être capable, dès lors que le réseau a plus de deux couches, d'apprendre des fonctions fortement non linéaires sans a priori sur leur forme. Nous avons utilisé une pénalisation linéaire de la norme des poids. 
+Comme évoqué précédemment, les Neural Networks sont une piste naturels à explorer lorsque l’on n’a pas d'idée a priori de la forme du "bon" noyau à utiliser dans les SVMs. Un réseau de neurones consiste en une succession de couches de neurones. La première couche de neurones correspond aux données d'entrée et la dernière à la prédiction souhaitée. L'avantage principal des réseaux neuronaux est d'être capable, dès lors que le réseau a plus de deux couches, d'apprendre des fonctions fortement non linéaires sans a priori sur leur forme. Nous avons utilisé une pénalisation linéaire de la norme des poids. 
 
 La fonction de coup qu'on cherche à minimiser est la suivante :
 \begin{equation}
@@ -243,11 +243,11 @@ J(\theta)= \frac{1}{m} \sum_{i=1}^m \sum_{k=1}^K -y_k^{(i)} log((h_{\theta}(x^{(
 \end{split}
 \end{equation} 
 
-+\begin{figure}[H]
- +  \centering  
- +  \caption{Schéma éxplitaif représetant un réseau de neuronnes}
- +  \includegraphics[width=7cm]{nn_explanation.png}
- +\end{figure}
+\begin{figure}[H]
+\centering  
+\caption{Schéma éxplitaif représetant un réseau de neuronnes}
+\includegraphics[width=7cm]{nn_explanation.png}
+\end{figure}
 
 \paragraph{prétraitement}
 Le prétraitement correspond ici aux choix des données à mettre dans la première couche. Nous avons utilisé un maximum d'input dans un premier temps. En étudiant les premiers résultats, nous avons pu estimer quels imputs avaient le plus d’impact sur la décision finale. Après plusieurs itérations et tests, nous avons conclus que les éléments les plus importants étaient les suivants :
