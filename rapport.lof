@@ -8,4 +8,6 @@
 \contentsline {figure}{\numberline {2.4}{\ignorespaces analyse de la composante principale}}{6}
 \contentsline {figure}{\numberline {2.5}{\ignorespaces r\IeC {\'e}sultats de la Random forest (pixels m\IeC {\'e}lang\IeC {\'e}s)}}{7}
 \contentsline {figure}{\numberline {2.6}{\ignorespaces R\IeC {\'e}sultats de la m\IeC {\'e}thode SVM: proportion de bonnes pr\IeC {\'e}dictions et nombre de pixels dans l'ensemble de test, pour chaque image.}}{9}
-\contentsline {figure}{\numberline {2.7}{\ignorespaces Comparaison des taux de bonne pr\IeC {\'e}diction des diff\IeC {\'e}rentes m\IeC {\'e}thodes de classification test\IeC {\'e}es.}}{9}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Poids des inputs}}{10}
+\contentsline {figure}{\numberline {2.8}{\ignorespaces R\IeC {\'e}sultats de la classification avec des neural networks}}{10}
+\contentsline {figure}{\numberline {2.9}{\ignorespaces Comparaison des taux de bonne pr\IeC {\'e}diction des diff\IeC {\'e}rentes m\IeC {\'e}thodes de classification test\IeC {\'e}es.}}{11}

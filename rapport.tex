@@ -8,6 +8,7 @@
 \graphicspath{{figures/}}
 \usepackage[margin=3cm]{geometry}
 \usepackage{array}
+\usepackage{float}
 
 \title{Projet 3A\\Analyse d'imagerie polarimétrique}
 \author{\textsc{Guinaudeau} Alexandre\\
@@ -28,6 +29,7 @@ Le résumé (abstract en anglais) de mon article.
 
 \chapter{contexte}
 \section{ADM Polar, contexte du projet}
+Le principal partenaire du projet est ADM Polar est une start up d'imagerie médicale basée sur la collecte et l'analyse de données polarimétriques. L'objectif de la start up est d'utiliser ces données afin de diagnostiquer de façon automatisée un cancer (col de l'uterus). Une première étude in-vivo menée sur 140 patientes leur a fourni une large base de données sur laquelle ils comptent construire leur entreprise grâce à de l'analyse Big Data. Lors d'une événement du cabinet Start up, organisé par les élèves de l'école polytechnique (dont Étienne), nous les avons rencontré une première fois. Les membres de la start up sont alors venu vers nous en nous expliquant qu'ils avaient énormément de données à valoriser mais qu'ils ne savaient pas trop comment faire (leur domaine respectifs étant plutôt relié à la physique et au médical). Nous avons donc décider dans le cadre du projet 3A de nous lancer dans cette entreprise ambitieuse, à l'aide de nos connaissances en informatique et nos cours de Big Data. La start up étant localisée dans les laboratoires de l'école, cela a rendu plus simple les rencontre, les échanges et les suivis tout au long du projet.
 \section{Présentation des données}
 Pour ce projet nous disposions d'un jeu de données de $163 000$ pixels répartis sur 17 images différentes. Pour chaque pixel nous avions les 16 éléments de la matrice de Müller, leur position, leur diagnostic, et l'image correspondante.
 Ces Pixels sont répartis en $4/5$ de sains et $1/5$ de malades. L'affichage des pixels nous montre que dans chaque image, les pixels sont répartis en zones au diagnostic identique. Sur les $17$ images, $11$ possèdent que des zones saines, une a une zone saine et une zone malade et les $5$ dernières ont que des zones malades. Le nombre d'images étant assez limité il n'a été facile de trouver des points communs aux pixels sain et aux pixels malades.
@@ -75,15 +77,15 @@ La méthode de clustering utilisé consiste en :
 Cette méthode nous a permis de passer de $163 000$ points à $52$ plus significatifs. Elle nous a aussi permis de mieux comprendre la répartition des points. Le clustering a surtout un apport au niveau de la compréhension des données. Il pourrait avoir un impact (en tant que tel) sur les résultats, mais son but a été surtout de mieux comprendre la disposition des données pour pouvoir apprendre dessus.
 \chapter{Le traitement des données}
 
-\section{Prétraitement des données}
+\paragraph{Prétraitement des données}
 Le Prétraitement de données est l'étape essentielle qui précède l'apprentissage. Elle est la clé de celui ci, un bon prétraitement permet d'éliminer le bruit et présente les données sous un angle facilement exploitable. C'est là que se situe tout l'enjeu d'un classifieur Big Data ainsi que le travail d'un data analyst, les méthodes d'apprentissage étant préexistantes.  
 
 Les différents types de prétraitements que l'on peut faire avant de traiter les données
-\section{Les différentes approches de traitement des données}
 
-\subsection{Réduction de dimension}
-\subsubsection{PCA}
-\paragraph{rappel de la méthode }
+\section{Réduction de dimension}
+
+Avant d'essayer de classiffier les points, on peut tout d'abod tenter de rédurie la dimension des points à traiter par des méthodes de réduction de dimension
+\subsection{PCA}
 L'Analyse en Composantes Principales (ou PCA) consiste à essayer de représenter les données dans un espace de plus petites dimensions. Les vecteurs directeurs du nouvel espace maximise la variance entre les données. Nous présentons ici les résultats pour la dimension 2.
 \paragraph{prétraitement utilisé}
 Nous effectuons cette PCA sur les centres des clusters préalablement présentés (cf 1.1.1). Les centres des clusters représentent de manière fidèle l'ensemble des points qu'il rassemble. Chaque cluster est représenté par un vecteur d'éléments de la matrice de Müller. Tous les éléments de Müller sont gardés à l’exception de la première ligne et première colonne qui ne sont pas a priori pertinentes (d'après les informations des physiciens)
@@ -119,38 +121,35 @@ On remarque une certaine anti-corrélation des éléments de la matrice de Müll
 La PCA effectuée sur les centres des clusters valident certaines supposition comme le rôle faible des éléments diagonaux ou le rôle important des éléments M34 et M43.
 
 Par contre, la projection de la PCA en 2 dimensions ne nous permet pas de séparer les données de manière suffisantes pour être capable de distinguer des zones clairement différentes entre les clusters sains et les clusters malades. (fig 2.2)
-\subsection{Méthode de classification}
+\section{Méthode de classification}
 
-\subsubsection{Arbre décisionnel et Random Forest}
-\paragraph{rappel de la méthode }
-
+\subsection{Arbre décisionnel et Random Forest}
 \subparagraph{Arbre décisionnel} 
 \index{Arbre de décision}
 L'arbre décisionnel est une méthode de classification très classique, qui donne souvent de bon résultats. L'idée est trouver un hyperplan qui sépare au mieux les données (parfois très simple, sur une variable uniquement) et de recommencer cela sur les deux sous ensembles de données ainsi crées. On isole ainsi les zones où les points sont similaires, et l'on peut ainsi prédire le diagnostique d'un pixel, les hyperplans permettant de construire un arbre de décision.
 \subparagraph{Random Forest}
 \index{Arbre de décision}
 La Random Forest ou forêt d'arbre, est juste un ensemble d'arbres de décision. Les données sont divisées aléatoirement, puis l'on associe à chaque sous ensemble un arbre de décision. Le résultat de la prédiction se fait par vote, chaque arbre donne sa prédiction, la prédiction majoritaire l'emporte.
-\paragraph{prétraitement utilisé}
+\paragraph{Prétraitement utilisé}
 Nous avons commencé à apprendre sur toutes les données. Au début nous avions uniquement les pixels, sans les images associés, puis pour préciser les résultats et limiter le sur-apprentissage nous les avons classés par image. Nous avons appris au début sur tous les paramètres de la matrice de Müller, puis uniquement sur les 6 éléments significatifs.
-\paragraph{résultats (notamment graphique)}
+\paragraph{Résultats}
 L'apprentissage sur les 16 éléments de la matrice de Müller a résulté dans fort sur-apprentissage : l'arbre de décision réussissait à retrouver l'image de provenance, la forte corrélation entre image et diagnostic ne nous permet donc pas d'aller plus loin. L'apprentissage sur 16 images et le test sur la 17éme a permis de dévoiler ce sur-apprentissage, avec des performances renversées et aléatoires. Sur la figure qui suit on peut voir des résultats très élevés (de l'ordre de 95\%) qui témoignent plus d'un sur-apprentissage que d'un réel résultat. En effet la séparation de par image entre ensemble de test et d'apprentissage donne des résultats beaucoup plus mitigés (autour de 40\%). La restriction à 6 éléments de la matrice n'améliore pas la performance. 
 \begin{figure}[htbp]
   \caption{résultats de la Random forest (pixels mélangés)}
   \centering
   \includegraphics[width=10cm]{RandomForestPerf.png}
 \end{figure}
-\paragraph{explication}
+\paragraph{Explication}
 Le faible nombre d'images à diagnostic non uniforme conduit l'algorithme à choisir l'image pour déterminer le diagnostic, les différences entre les images étant plus importantes que les différences de diagnostic. L'apprentissage est donc nécessairement biaisé. 
-\paragraph{piste d'amélioration}
+\paragraph{Piste d'amélioration}
 Pour résoudre ce problème il faudrait avoir accès à des images au diagnostic varié, images sur lesquelles un réel apprentissage est possible. La difficulté à obtenir ces images nous a poussé a changer de méthode d'apprentissage et à pousser plus loin la compréhension que l'on avait des données.
-\subsubsection{K plus proche voisin}
-\paragraph{rappel de la méthode }
+\subsection{K plus proche voisin}
 La méthode des k plus proche voisin consiste à essayer de prédire l’état d'un nouveaux point en se basant sur l'état de ses voisins les plus proches. Cette méthode a l'avantage de pouvoir classer les données selon des schémas non linéaires. Par contre, c'est une méthode sensible à la dimension. 
-\paragraph{prétraitement utilisé}
+\paragraph{Prétraitement utilisé}
 Nous avons testé la méthodes des KNN sur les centres des clusters pour plusieurs raisons :
 - A chaque classification, l'algorithme doit recalculer l'ensemble des distances avec tout l’échantillon d'apprentissage. Il y a donc une nécessité de réduire le nombre de donnée en entrée sur lesquels on calcule les distances.
 - De plus, chaque cluster regroupe un ensemble de point très proches les uns des autres. Ainsi, en prenant tous les éléments, les plus proches voisins d'un certain point auraient souvent tous appartenu au même cluster ce qui rend l'information extraite redondante. Cela aurait revenu à utiliser l'algorithme avec 1 seul voisin. 
-\paragraph{résultats}
+\paragraph{Résultats}
 Les résultats présentés ci dessous corresponde au taux de bonne prédiction en prenant une image de test et en cherchant les k plus proches voisins sur les 16 autres. Chaque cluster est représenté par un vecteur comprenant les éléments suivants de la matrice de Müller : ['M23', 'M24', 'M32', 'M34', 'M42', 'M43'].
 \subparagraph{}
 \begin{center}
@@ -182,35 +181,66 @@ Les résultats présentés ci dessous corresponde au taux de bonne prédiction e
 \end{center}
 
 En utilisant les 9 éléments de la matrice de Müller Mij avec i et j différents de 1, on obtient un taux moyen de 65%
-\paragraph{conclusion}
+\paragraph{Conclusion}
 Les résultats donnés par les KNN ne sont pas très bon. Piste d'explication?
 
-\subsubsection{SVM}
+\subsection{SVM}
 \index{SVM}
 Les Machines à Vecteurs Support ou SVM (Support Vector Machine) sont des classifieurs qui cherchent à séparer linéairement deux ensembles de points dans un certain espace en maximisant la marge entre ces deux sets de points. Par défault (avec un noyeau linéaire), la séparation est donc nécessairement linéaire. Cependant, en transformant nos données pour les plongées dans un autre espace, souvent de dimension supérieur, on peut générer un modèle de capacité supérieur et fortement non linéaire. C'est ce qu'on appelle le Kernel trick\index{Kernel trick}
 
-\paragraph{prétraitement utilisé}
+\paragraph{Prétraitement utilisé}
 Les SVM sont efficaces lorsque le nombre de feature est inférieur (voire très inférieur) au nombre de données. On applique donc cette méthode aux points directement, et non pas aux centres des clusters.
 
-\paragraph{résultats}
-\begin{figure}[htbp]
+\paragraph{Résultats}
+
+\begin{figure}[H]
+  \centering  
   \caption{Résultats de la méthode SVM: proportion de bonnes prédictions et nombre de pixels dans l'ensemble de test, pour chaque image.}
-  \centering
   \includegraphics[width=10cm]{SVM_CV.png}
 \end{figure}
 
-Les SVM sont efficaces lorque le nombre de feature est inférieur (voir très inférieur au nombre de données). 
-
-\paragraph{prétraitement utilisé}
-\paragraph{résultats (notamment graphique)}
-\paragraph{explication et piste d'amélioration}
+\paragraph{Explication et Piste d'amélioration}
 Le problème du Kernel trick\index{Kernel trick} est qu'il necessitte d'avoir une idée a priori du type de fonction que l'on cherche à estimer pour pouvoir utiliser un noyeau adequat. Ce n'est ici pas le cas, on ne sais pas a priori qu'elle pourrait être le type de fonction permettant de distinguer linéairement un pixel sain d'un pixel malade.
 
 Pour contrer ce problème, il faudrait "apprendre la fonction noyeau". C'est en quelque sorte le rôle des neural networks.\index{Neural networks}. On peut voir les n-1 couches du réseau de neuronnes comme étant la fonction du noyeau et la dernière comme une séparation linéaire sur les données plongées dans ce nouvel espace.
-<<<<<<< HEAD
-=======
 
-\section*{Résultats}
+\subsection{Reseaux de Neurones}
+
+Comme évoqué précedemment, les Neural Networks sont une piste naturels à explorer lorsqu'on a pas d'idée a priori de la forme du "bon" noyeau à utiliser dans les SVMs. Un réseau de neuronnes consiste en une succession de couche de neuronnes. La première couche de neuronnes correspond aux données d'entrée et la dernière à la prediction souhaitée. L'avantage principale des réseaux neuronnaux est d'être capable, délors que le réseau a plus de deux couches, d'apprendre des fonctions fortement non linéaires sans apriori sur leur forme. Nous avons utilisé une pénalisation linéaire de la norme des poids. 
+
+\paragraph{prétraitement}
+Le prétraitement correspond ici aux choix des données à mettre dans la première couche. Nous avons utilisé un maximum d'input dans un premier temps. Par la suite nous avons pu éstimé le poids final de chacun de  ces inputs pour évaluer quels étaient les inputs important pour la prise de décision. Après plusieurs itérations et tests, nous avons conclus que les éléments les plus importants étaient les suivants :
+
+\begin{itemize}
+
+    \item Les éléments de la matrice de Muller : M32, 	M43, M33, M42
+
+    \item La norme 1 de la matrice de Muller 
+    
+    \item La norme 2 de la matrice de Muller 
+
+    \item La norme infini de la matrice de Muller  
+
+\end{itemize}
+
+\begin{figure}[htbp]
+  \caption{Poids des inputs}
+  \centering
+  \includegraphics[width=10cm]{input_weight_nn.png}
+\end{figure}
+
+\paragraph{Résultats}
+Les résultats présentés ici sont obtenus avec un réseaux de quatre couches : [7, 50, 50, 2] et un constante de pénalisation de 0.5.
+On obtient un tax de bonnes prédictions moyen de 80\% en effectuant une validation croisée avec un apprentissage sur 16 images et test sur la 17ème. 
+
+Les résultats nous seraient surement améliorés en augmentant le nombre d'itération et en s'appuyant sur un set de donnée plus large. En l'état, les résultas sont comparables à ceux donner par les SVMs.
+\begin{figure}[htbp]
+  \caption{Résultats de la classification avec des neural networks}
+  \centering
+  \includegraphics[width=10cm]{nn_results.png}
+\end{figure}
+
+\section{Comparaison des méthodes de classifications}
 
 \begin{figure}[htbp]
   \caption{Comparaison des taux de bonne prédiction des différentes méthodes de classification testées.}
@@ -244,7 +274,6 @@ Par ailleurs, on remarque que les images ayant beaucoup de pixels (les images 2 
 Notons enfin que l'image 16 a également un taux de précision très faible, en dépit de son petit combre de points. C'est la seule image ayant à la fois des zones saines et malades, il semble donc que les méthodes aient tendance à prédire le même diagnostic pour les pixels d'une même image.
 Dans les circonstances actuelles, certaines images ont des résultats très inférieurs à cette valeur moyenne, voire en-deçà de 50\%: ces méthodes ne sont donc pas assez fiable pour permettre de bien classifier les données.
 
->>>>>>> 24f4a82cd9d3f0bc5bb201d27b4a75ee343d3486
 \tableofcontents
 
 
