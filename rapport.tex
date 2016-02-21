@@ -108,7 +108,7 @@ Cette méthode nous a permis de passer de $163 000$ points à $52$ plus signific
 Avant d'essayer de classifier les points, on peut tout d’abord tenter de réduire la dimension des points à traiter.
 
 \subsection{PCA}
-L'Analyse en Composantes Principales ou PCA (Principal Component Analysis) consiste à essayer de représenter les données dans un espace de plus petite dimension. Les vecteurs directeurs du nouvel espace maximisent la variance entre les données. On se place donc dans un espace qui « éloign » le plus possible les données les unes des autres. Nous présentons ici les résultats pour la dimension 2.
+L'Analyse en Composantes Principales ou PCA (Principal Component Analysis) consiste à essayer de représenter les données dans un espace de plus petite dimension. Les vecteurs directeurs du nouvel espace maximisent la variance entre les données. On se place donc dans un espace qui éloigne le plus possible les données les unes des autres. Nous présentons ici les résultats pour la dimension 2.
 \paragraph{prétraitement utilisé}
 Nous effectuons cette PCA sur les centres des clusters préalablement présentés (cf 1.1.1). Les centres de clusters représentent de manière fidèle l'ensemble des points qu'il rassemble, et ceci évite de donner un poids trop important aux clusters qui contiennent beaucoup de points. On peut ainsi visualiser les clusters dans un espace qui les éloigne beaucoup les uns des autres. Par ailleurs, chaque cluster est représenté par un vecteur d'éléments de la matrice de Müller. Tous les éléments de Müller sont gardés à l’exception de la première ligne et première colonne qui ne sont pas a priori pertinentes (d'après les informations des physiciens)
 \begin{figure}[htb]
