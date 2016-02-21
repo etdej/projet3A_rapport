@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.11.5)  21 FEB 2016 19:41
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.11.5)  21 FEB 2016 20:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -548,95 +548,102 @@ Package pdftex.def Info: figures/piece(17).jpg used on input line 73.
 figures/piece(7).jpg> <./figures/piece(8).jpg> <./figures/piece(9).jpg> <./figu
 res/piece(10).jpg> <./figures/piece(11).jpg> <./figures/piece(12).jpg> <./figur
 es/piece(13).jpg> <./figures/piece(14).jpg> <./figures/piece(15).jpg> <./figure
-s/piece(16).jpg> <./figures/piece(17).jpg>] [5]
+s/piece(16).jpg> <./figures/piece(17).jpg>]
 Chapitre 2.
 (/usr/local/texlive/2015/texmf-dist/tex/latex/ucs/data/uni-32.def
 File: uni-32.def 2013/05/13 UCS: Unicode data U+2000..U+20FF
 )
-<figures/PCA_0.png, id=51, 578.16pt x 433.62pt>
+<figures/PCA_0.png, id=48, 578.16pt x 433.62pt>
 File: figures/PCA_0.png Graphic file (type png)
  <use figures/PCA_0.png>
 Package pdftex.def Info: figures/PCA_0.png used on input line 112.
 (pdftex.def)             Requested size: 284.52756pt x 213.39536pt.
 
-<figures/PCA_1.png, id=52, 578.16pt x 433.62pt>
+<figures/PCA_1.png, id=49, 578.16pt x 433.62pt>
 File: figures/PCA_1.png Graphic file (type png)
  <use figures/PCA_1.png>
 Package pdftex.def Info: figures/PCA_1.png used on input line 117.
 (pdftex.def)             Requested size: 284.52756pt x 213.39536pt.
 
-<figures/PCA_3.png, id=53, 578.16pt x 433.62pt>
+<figures/PCA_3.png, id=50, 578.16pt x 433.62pt>
 File: figures/PCA_3.png Graphic file (type png)
  <use figures/PCA_3.png>
 Package pdftex.def Info: figures/PCA_3.png used on input line 122.
 (pdftex.def)             Requested size: 284.52756pt x 213.39536pt.
 
-<figures/PCA_2.png, id=54, 578.16pt x 433.62pt>
+<figures/PCA_2.png, id=51, 578.16pt x 433.62pt>
 File: figures/PCA_2.png Graphic file (type png)
  <use figures/PCA_2.png>
 Package pdftex.def Info: figures/PCA_2.png used on input line 127.
 (pdftex.def)             Requested size: 284.52756pt x 213.39536pt.
 
-[6
+[5
 
-] [7 <./figures/PCA_0.png> <./figures/PCA_1.png>] [8 <./figures/PCA_3.png> <./f
-igures/PCA_2.png>]
-<figures/RandomForestPerf.png, id=70, 473.51906pt x 229.60782pt>
+] [6 <./figures/PCA_0.png>] [7 <./figures/PCA_1.png> <./figures/PCA_3.png>]
+<figures/RandomForestPerf.png, id=66, 473.51906pt x 229.60782pt>
 File: figures/RandomForestPerf.png Graphic file (type png)
 
 <use figures/RandomForestPerf.png>
 Package pdftex.def Info: figures/RandomForestPerf.png used on input line 157.
 (pdftex.def)             Requested size: 284.52756pt x 137.96895pt.
- [9 <./figures/RandomForestPerf.png>]
-<figures/SVM_CV.png, id=74, 417.2388pt x 218.2554pt>
+ [8 <./figures/PCA_2.png> <./figures/RandomForestPerf.png>] [9] <figures/SVM_CV
+.png, id=74, 417.2388pt x 218.2554pt>
 File: figures/SVM_CV.png Graphic file (type png)
- <use figures/SVM_CV.png>
+
+<use figures/SVM_CV.png>
 Package pdftex.def Info: figures/SVM_CV.png used on input line 216.
 (pdftex.def)             Requested size: 284.52756pt x 148.84131pt.
 
-[10] <figures/input_weight_nn.png, id=78, 531.9875pt x 417.56pt>
+<figures/nn_explanation.png, id=75, 324.21124pt x 359.3425pt>
+File: figures/nn_explanation.png Graphic file (type png)
+
+<use figures/nn_explanation.png>
+Package pdftex.def Info: figures/nn_explanation.png used on input line 239.
+(pdftex.def)             Requested size: 199.16928pt x 220.7558pt.
+ [10 <./figures/SVM_CV.png>]
+<figures/input_weight_nn.png, id=84, 531.9875pt x 417.56pt>
 File: figures/input_weight_nn.png Graphic file (type png)
 
 <use figures/input_weight_nn.png>
-Package pdftex.def Info: figures/input_weight_nn.png used on input line 255.
+Package pdftex.def Info: figures/input_weight_nn.png used on input line 260.
 (pdftex.def)             Requested size: 284.52756pt x 223.33185pt.
- [11 <./figures/SVM_CV.png>]
-<figures/nn_results.png, id=87, 794.97pt x 430.60875pt>
+ [11 <./figures/nn_explanation.png> <./figures/input_weight_nn.png>] <figures/n
+n_results.png, id=90, 794.97pt x 430.60875pt>
 File: figures/nn_results.png Graphic file (type png)
 
 <use figures/nn_results.png>
-Package pdftex.def Info: figures/nn_results.png used on input line 266.
+Package pdftex.def Info: figures/nn_results.png used on input line 271.
 (pdftex.def)             Requested size: 284.52756pt x 154.11885pt.
 
-<figures/Compared_CV.png, id=88, 712.1004pt x 332.9238pt>
+<figures/Compared_CV.png, id=91, 712.1004pt x 332.9238pt>
 File: figures/Compared_CV.png Graphic file (type png)
 
 <use figures/Compared_CV.png>
-Package pdftex.def Info: figures/Compared_CV.png used on input line 274.
+Package pdftex.def Info: figures/Compared_CV.png used on input line 279.
 (pdftex.def)             Requested size: 284.52756pt x 133.01984pt.
- [12 <./figures/input_weight_nn.png> <./figures/nn_results.png>] [13 <./figures
-/Compared_CV.png>] (./rapport.toc)
+ [12 <./figures/nn_results.png> <./figures/Compared_CV.png>] [13] [14
+
+] (./rapport.toc)
 \tf@toc=\write4
 \openout4 = `rapport.toc'.
 
- [14
+ [15
 
-]
-(./rapport.lof)
+] (./rapport.lof)
 \tf@lof=\write5
 \openout5 = `rapport.lof'.
 
- [15
+ [16
 
 ] (./rapport.aux) ) 
 Here is how much of TeX's memory you used:
- 5253 strings out of 493089
- 73353 string characters out of 6134842
+ 5258 strings out of 493089
+ 73494 string characters out of 6134842
  146758 words of memory out of 5000000
- 8591 multiletter control sequences out of 15000+600000
+ 8595 multiletter control sequences out of 15000+600000
  69087 words of font info for 48 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 38i,15n,32p,1223b,598s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 38i,15n,32p,1349b,598s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/lm/lm-ma
 thsy.enc}{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr
 /local/texlive/2015/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}{/usr/local/tex
@@ -652,10 +659,10 @@ dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2015/texmf-dist/fonts/
 type1/public/lm/lmr17.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/publi
 c/lm/lmr7.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmri10.
 pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmsy10.pfb>
-Output written on rapport.pdf (16 pages, 2916820 bytes).
+Output written on rapport.pdf (17 pages, 3053291 bytes).
 PDF statistics:
- 150 PDF objects out of 1000 (max. 8388607)
- 81 compressed objects within 1 object stream
+ 155 PDF objects out of 1000 (max. 8388607)
+ 83 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 141 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 146 words of extra memory for PDF output out of 10000 (max. 10000000)
 

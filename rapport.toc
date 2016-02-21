@@ -3,32 +3,32 @@
 \contentsline {section}{\numberline {1.1}ADM Polar, contexte du projet}{3}
 \contentsline {section}{\numberline {1.2}Pr\IeC {\'e}sentation des donn\IeC {\'e}es}{3}
 \contentsline {subsection}{\numberline {1.2.1}la Matrice de M\IeC {\"u}ller}{3}
-\contentsline {subsection}{\numberline {1.2.2}Le Clustering}{5}
-\contentsline {chapter}{\numberline {2}Le traitement des donn\IeC {\'e}es}{6}
-\contentsline {paragraph}{Pr\IeC {\'e}traitement des donn\IeC {\'e}es}{6}
-\contentsline {section}{\numberline {2.1}R\IeC {\'e}duction de dimension}{6}
-\contentsline {subsection}{\numberline {2.1.1}PCA}{6}
+\contentsline {chapter}{\numberline {2}Le traitement des donn\IeC {\'e}es}{5}
+\contentsline {paragraph}{Pr\IeC {\'e}traitement des donn\IeC {\'e}es}{5}
+\contentsline {subsection}{\numberline {2.0.1}Le Clustering}{5}
+\contentsline {section}{\numberline {2.1}R\IeC {\'e}duction de dimension}{5}
+\contentsline {subsection}{\numberline {2.1.1}PCA}{5}
 \contentsline {paragraph}{pr\IeC {\'e}traitement utilis\IeC {\'e}}{6}
 \contentsline {paragraph}{r\IeC {\'e}sultats}{6}
 \contentsline {paragraph}{conclusion}{6}
-\contentsline {section}{\numberline {2.2}M\IeC {\'e}thode de classification}{9}
-\contentsline {subsection}{\numberline {2.2.1}Arbre d\IeC {\'e}cisionnel et Random Forest}{9}
-\contentsline {subparagraph}{Arbre d\IeC {\'e}cisionnel}{9}
-\contentsline {subparagraph}{Random Forest}{9}
+\contentsline {section}{\numberline {2.2}M\IeC {\'e}thode de classification}{6}
+\contentsline {subsection}{\numberline {2.2.1}Arbre d\IeC {\'e}cisionnel et Random Forest}{6}
+\contentsline {subparagraph}{Arbre d\IeC {\'e}cisionnel}{6}
+\contentsline {subparagraph}{Random Forest}{6}
+\contentsline {paragraph}{Pr\IeC {\'e}traitement utilis\IeC {\'e}}{8}
+\contentsline {paragraph}{R\IeC {\'e}sultats}{8}
+\contentsline {paragraph}{Explication}{8}
+\contentsline {paragraph}{Piste d'am\IeC {\'e}lioration}{9}
+\contentsline {subsection}{\numberline {2.2.2}K plus proche voisin}{9}
 \contentsline {paragraph}{Pr\IeC {\'e}traitement utilis\IeC {\'e}}{9}
 \contentsline {paragraph}{R\IeC {\'e}sultats}{9}
-\contentsline {paragraph}{Explication}{9}
-\contentsline {paragraph}{Piste d'am\IeC {\'e}lioration}{9}
-\contentsline {subsection}{\numberline {2.2.2}K plus proche voisin}{10}
+\contentsline {subparagraph}{}{9}
+\contentsline {paragraph}{Conclusion}{9}
+\contentsline {subsection}{\numberline {2.2.3}SVM}{9}
 \contentsline {paragraph}{Pr\IeC {\'e}traitement utilis\IeC {\'e}}{10}
 \contentsline {paragraph}{R\IeC {\'e}sultats}{10}
-\contentsline {subparagraph}{}{10}
-\contentsline {paragraph}{Conclusion}{10}
-\contentsline {subsection}{\numberline {2.2.3}SVM}{10}
-\contentsline {paragraph}{Pr\IeC {\'e}traitement utilis\IeC {\'e}}{10}
-\contentsline {paragraph}{R\IeC {\'e}sultats}{11}
-\contentsline {paragraph}{Explication et Piste d'am\IeC {\'e}lioration}{11}
-\contentsline {subsection}{\numberline {2.2.4}R\IeC {\'e}seaux de Neurones}{11}
+\contentsline {paragraph}{Explication et Piste d'am\IeC {\'e}lioration}{10}
+\contentsline {subsection}{\numberline {2.2.4}R\IeC {\'e}seaux de Neurones}{10}
 \contentsline {paragraph}{pr\IeC {\'e}traitement}{11}
-\contentsline {paragraph}{R\IeC {\'e}sultats}{12}
+\contentsline {paragraph}{R\IeC {\'e}sultats}{11}
 \contentsline {section}{\numberline {2.3}Comparaison des m\IeC {\'e}thodes de classifications}{12}

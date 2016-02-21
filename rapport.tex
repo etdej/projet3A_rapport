@@ -52,7 +52,7 @@ Pour ce projet nous disposions d'un jeu de données de $163 000$ pixels réparti
 Ces Pixels sont répartis en $4/5$ de sains et $1/5$ de malades. L'affichage des pixels nous montre que dans chaque image, les pixels sont répartis en zones au diagnostic identique. Sur les $17$ images, $11$ possèdent que des zones saines, une a une zone saine et une zone malade et les $5$ dernières ont que des zones malades. Le nombre d'images étant assez limité il n'a été facile de trouver des points communs aux pixels sain et aux pixels malades.
 
 \begin{figure}[htbp]
-  \caption{répartition des zones}
+  \caption{Répartition des zones}
   \centering
   \includegraphics[width=3cm]{piece(1).jpg}
   \includegraphics[width=3cm]{piece(2).jpg}
@@ -233,6 +233,11 @@ J(\theta)= \frac{1}{m} \sum_{i=1}^m \sum_{k=1}^K -y_k^{(i)} log((h_{\theta}(x^{(
 \end{split}
 \end{equation} 
 
++\begin{figure}[H]
+ +  \centering  
+ +  \caption{Schéma éxplitaif représetant un réseau de neuronnes}
+ +  \includegraphics[width=7cm]{nn_explanation.png}
+ +\end{figure}
 
 \paragraph{prétraitement}
 Le prétraitement correspond ici aux choix des données à mettre dans la première couche. Nous avons utilisé un maximum d'input dans un premier temps. Par la suite nous avons pu estimer le poids final de chacun de  ces inputs pour évaluer quels étaient les inputs important pour la prise de décision. Après plusieurs itérations et tests, nous avons conclus que les éléments les plus importants étaient les suivants :
