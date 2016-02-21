@@ -111,12 +111,12 @@ Avant d'essayer de classifier les points, on peut tout d’abord tenter de rédu
 L'Analyse en Composantes Principales ou PCA (Principal Component Analysis) consiste à essayer de représenter les données dans un espace de plus petite dimension. Les vecteurs directeurs du nouvel espace maximisent la variance entre les données. On se place donc dans un espace qui « éloign » le plus possible les données les unes des autres. Nous présentons ici les résultats pour la dimension 2.
 \paragraph{prétraitement utilisé}
 Nous effectuons cette PCA sur les centres des clusters préalablement présentés (cf 1.1.1). Les centres de clusters représentent de manière fidèle l'ensemble des points qu'il rassemble, et ceci évite de donner un poids trop important aux clusters qui contiennent beaucoup de points. On peut ainsi visualiser les clusters dans un espace qui les éloigne beaucoup les uns des autres. Par ailleurs, chaque cluster est représenté par un vecteur d'éléments de la matrice de Müller. Tous les éléments de Müller sont gardés à l’exception de la première ligne et première colonne qui ne sont pas a priori pertinentes (d'après les informations des physiciens)
-\begin{figure}
+\begin{figure}[htb]
   \caption{centre des clusters avant transformation}
   \centering
   \includegraphics[width=10cm]{PCA_0.png}
 \end{figure}
-\begin{figure}
+\begin{figure}[htb]
   \caption{centre des clusters après transformation}
   \centering
   \includegraphics[width=10cm]{PCA_1.png}
@@ -309,7 +309,7 @@ Ce tableau présente les taux de précision moyens des méthodes précédentes, 
 
 La méthode Knn semble avoir de moins bons résultats que les méthodes SVM et Neural network. 
 
-Par ailleurs, on remarque que les images ayant beaucoup de pixels (les images 2 et 8 représentent 30\% des pixels) ont des moins bons taux de prédiction, ce qui pourrait indiquer que nous n'avons pas atteint le seuil de données critiques nécessaires à des résultats optimaux. En effet, en augmentant le nombre d’itérations de la fonction de minimisation pour la validation croisée de l’image 2, de 200 à 5000, le taux de précision croît de 32 à 67\%. En contrepartie, le temps de calcul passe de 4 minutes à plus d’une heure et demie. Ceci confirme que l’on peut fortement améliorer les résultats, simplement en augmentant le temps de calcul, pour garantir un taux de précision plus élevé.
+Par ailleurs, on remarque que les images ayant beaucoup de pixels (les images 2 et 8 représentent 30\% des pixels) ont des moins bons taux de prédiction, ce qui pourrait indiquer que nous n'avons pas atteint le seuil de données critiques nécessaires à des résultats optimaux. En effet, en augmentant le nombre d’itérations de la fonction de minimisation pour la validation croisée de l’image 2, de 200 à 5000, le taux de précision croît de 27 à 67\%. En contrepartie, le temps de calcul passe de 4 minutes à plus d’une heure et demie. Ceci confirme que l’on peut fortement améliorer les résultats, simplement en augmentant le temps de calcul, pour garantir un taux de précision plus élevé.
 Avec quelques images supplémentaires, on pourrait espérer garantir un taux de précision d'au moins 80\% à 90\% avec cette méthode. On pourrait également combiner les différentes méthodes précédentes : si elles ne se trompent pas simultanément, on pourrait ainsi booster les résultats de prédiction.
 Notons enfin que l'image 16 a également un taux de précision très faible, en dépit de son petit nombre de points. C'est la seule image ayant à la fois des zones saines et malades, il semble donc que les méthodes aient tendance à prédire le même diagnostic pour les pixels d'une même image.
 Dans les circonstances actuelles, certaines images ont des résultats très inférieurs à cette valeur moyenne, voire en-deçà de 50\%: ces méthodes ne sont donc pas assez fiable pour permettre de bien classifier les données.

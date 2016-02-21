@@ -3,9 +3,9 @@
 \contentsline {figure}{\numberline {1.1}{\ignorespaces R\IeC {\'e}partition des zones}}{4}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {2.1}{\ignorespaces centre des clusters avant transformation}}{6}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces centre des clusters apr\IeC {\`e}s transformation}}{7}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces centre des clusters apr\IeC {\`e}s transformation}}{6}
 \contentsline {figure}{\numberline {2.3}{\ignorespaces Part de variance expliqu\IeC {\'e}e}}{7}
-\contentsline {figure}{\numberline {2.4}{\ignorespaces analyse de la composante principale}}{8}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces analyse de la composante principale}}{7}
 \contentsline {figure}{\numberline {2.5}{\ignorespaces r\IeC {\'e}sultats de la Random Forest (pixels m\IeC {\'e}lang\IeC {\'e}s)}}{8}
 \contentsline {figure}{\numberline {2.6}{\ignorespaces R\IeC {\'e}sultats de la m\IeC {\'e}thode SVM: proportion de bonnes pr\IeC {\'e}dictions et nombre de pixels dans l'ensemble de test, pour chaque image.}}{10}
 \contentsline {figure}{\numberline {2.7}{\ignorespaces Sch\IeC {\'e}ma \IeC {\'e}xplitaif repr\IeC {\'e}setant un r\IeC {\'e}seau de neuronnes}}{11}

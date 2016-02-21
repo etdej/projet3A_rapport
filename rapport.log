@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.9.18)  21 FEB 2016 22:19
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.9.18)  21 FEB 2016 22:53
 entering extended mode
 **rapport.tex
 (C:\Users\AlexandreGuinaudeau\Desktop\GitHub\projet3A_rapport\rapport.tex
@@ -539,18 +539,18 @@ Package pdftex.def Info: figures/PCA_2.png used on input line 132.
 [5
 
 ] [6 <C:/Users/AlexandreGuinaudeau/Desktop/GitHub/projet3A_rapport/figures/PCA_
-0.png>] [7 <C:/Users/AlexandreGuinaudeau/Desktop/GitHub/projet3A_rapport/figure
-s/PCA_1.png> <C:/Users/AlexandreGuinaudeau/Desktop/GitHub/projet3A_rapport/figu
-res/PCA_3.png>]
-<figures/RandomForestPerf.png, id=61, 473.51906pt x 229.60782pt>
+0.png> <C:/Users/AlexandreGuinaudeau/Desktop/GitHub/projet3A_rapport/figures/PC
+A_1.png>] [7 <C:/Users/AlexandreGuinaudeau/Desktop/GitHub/projet3A_rapport/figu
+res/PCA_3.png> <C:/Users/AlexandreGuinaudeau/Desktop/GitHub/projet3A_rapport/fi
+gures/PCA_2.png>]
+<figures/RandomForestPerf.png, id=62, 473.51906pt x 229.60782pt>
 File: figures/RandomForestPerf.png Graphic file (type png)
 
 <use figures/RandomForestPerf.png>
 Package pdftex.def Info: figures/RandomForestPerf.png used on input line 164.
 (pdftex.def)             Requested size: 284.52756pt x 137.96895pt.
- [8 <C:/Users/AlexandreGuinaudeau/Desktop/GitHub/projet3A_rapport/figures/PCA_2
-.png> <C:/Users/AlexandreGuinaudeau/Desktop/GitHub/projet3A_rapport/figures/Ran
-domForestPerf.png>] [9]
+ [8 <C:/Users/AlexandreGuinaudeau/Desktop/GitHub/projet3A_rapport/figures/Rando
+mForestPerf.png>] [9]
 <figures/SVM_CV.png, id=69, 417.2388pt x 218.2554pt>
 File: figures/SVM_CV.png Graphic file (type png)
  <use figures/SVM_CV.png>
@@ -579,12 +579,12 @@ File: figures/nn_results.png Graphic file (type png)
 Package pdftex.def Info: figures/nn_results.png used on input line 283.
 (pdftex.def)             Requested size: 284.52756pt x 154.11885pt.
 
-<figures/Compared_CV.png, id=77, 712.1004pt x 332.9238pt>
+<figures/Compared_CV.png, id=77, 712.1004pt x 365.6862pt>
 File: figures/Compared_CV.png Graphic file (type png)
 
 <use figures/Compared_CV.png>
 Package pdftex.def Info: figures/Compared_CV.png used on input line 291.
-(pdftex.def)             Requested size: 284.52756pt x 133.01984pt.
+(pdftex.def)             Requested size: 284.52756pt x 146.11006pt.
  [11 <C:/Users/AlexandreGuinaudeau/Desktop/GitHub/projet3A_rapport/figures/nn_e
 xplanation.png>] [12 <C:/Users/AlexandreGuinaudeau/Desktop/GitHub/projet3A_rapp
 ort/figures/input_weight_nn.png> <C:/Users/AlexandreGuinaudeau/Desktop/GitHub/p
@@ -605,7 +605,7 @@ top/GitHub/projet3A_rapport/figures/Compared_CV.png>] [14
 Here is how much of TeX's memory you used:
  4901 strings out of 493706
  67276 string characters out of 3144538
- 138515 words of memory out of 3000000
+ 137515 words of memory out of 3000000
  8105 multiletter control sequences out of 15000+200000
  69087 words of font info for 48 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
@@ -625,7 +625,7 @@ e1/public/lm/lmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr12
 iles/MiKTeX 2.9/fonts/type1/public/lm/lmr7.pfb><C:/Program Files/MiKTeX 2.9/fon
 ts/type1/public/lm/lmri10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/l
 m/lmsy10.pfb>
-Output written on rapport.pdf (17 pages, 845253 bytes).
+Output written on rapport.pdf (17 pages, 858779 bytes).
 PDF statistics:
  149 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

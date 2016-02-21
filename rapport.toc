@@ -10,10 +10,10 @@
 \contentsline {subsection}{\numberline {2.1.1}PCA}{5}
 \contentsline {paragraph}{pr\IeC {\'e}traitement utilis\IeC {\'e}}{6}
 \contentsline {paragraph}{r\IeC {\'e}sultats}{6}
-\contentsline {paragraph}{conclusion}{6}
-\contentsline {section}{\numberline {2.2}M\IeC {\'e}thode de classification}{6}
-\contentsline {subsection}{\numberline {2.2.1}Arbre d\IeC {\'e}cisionnel et Random Forest}{6}
-\contentsline {subparagraph}{Arbre d\IeC {\'e}cisionnel}{6}
+\contentsline {paragraph}{conclusion}{8}
+\contentsline {section}{\numberline {2.2}M\IeC {\'e}thode de classification}{8}
+\contentsline {subsection}{\numberline {2.2.1}Arbre d\IeC {\'e}cisionnel et Random Forest}{8}
+\contentsline {subparagraph}{Arbre d\IeC {\'e}cisionnel}{8}
 \contentsline {subparagraph}{Random Forest}{8}
 \contentsline {paragraph}{Pr\IeC {\'e}traitement utilis\IeC {\'e}}{8}
 \contentsline {paragraph}{R\IeC {\'e}sultats}{8}
