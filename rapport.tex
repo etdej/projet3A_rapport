@@ -10,6 +10,7 @@
 \usepackage{array}
 \usepackage{float}
 \usepackage[cc]{titlepic}
+\usepackage{amsmath}
 
 \titlepic{
 \includegraphics[width=7cm]{titlepic1.png}
@@ -27,12 +28,10 @@
 \begin{document}
 
 \maketitle
-
-\begin{abstract}
-Le résumé (abstract en anglais) de mon article.
-\end{abstract}
-
-\chapter{contexte}
+\chapter*{Remerciements}
+Nous tenons à remercier toute l'équipe d'ADM Polar qui nous a fait confiance pour mener ce projet. Ils ont su prendre le temps de nous expliquer les enjeux de l'analyse de donnée pour ADM Polar. Ils nous ont également fournit un ensemble de données nous permettant de mettre en application tout des technique d'apprentissage pour mieux les comprendre.
+Un grand remerciement également aux développeurs de la bibliothèque scikit sur laquelle nous nous sommes largement appuyé tout au long de ce projet.
+\chapter{Contexte}
 \section{ADM Polar, contexte du projet}
 Le principal partenaire du projet est ADM Polar est une start up d'imagerie médicale basée sur la collecte et l'analyse de données polarimétriques. L'objectif de la start up est d'utiliser ces données afin de diagnostiquer de façon automatisée un cancer (col de l'uterus). Une première étude in-vivo menée sur 140 patientes leur a fourni une large base de données sur laquelle ils comptent construire leur entreprise grâce à de l'analyse Big Data. Lors d'une événement du cabinet Start up, organisé par les élèves de l'école polytechnique (dont Étienne), nous les avons rencontré une première fois. Les membres de la start up sont alors venu vers nous en nous expliquant qu'ils avaient énormément de données à valoriser mais qu'ils ne savaient pas trop comment faire (leur domaine respectifs étant plutôt relié à la physique et au médical). Nous avons donc décider dans le cadre du projet 3A de nous lancer dans cette entreprise ambitieuse, à l'aide de nos connaissances en informatique et nos cours de Big Data. La start up étant localisée dans les laboratoires de l'école, cela a rendu plus simple les rencontre, les échanges et les suivis tout au long du projet.
 \section{Présentation des données}
@@ -209,12 +208,21 @@ Le problème du Kernel trick\index{Kernel trick} est qu'il necessitte d'avoir un
 
 Pour contrer ce problème, il faudrait "apprendre la fonction noyeau". C'est en quelque sorte le rôle des neural networks.\index{Neural networks}. On peut voir les n-1 couches du réseau de neuronnes comme étant la fonction du noyeau et la dernière comme une séparation linéaire sur les données plongées dans ce nouvel espace.
 
-\subsection{Reseaux de Neurones}
+\subsection{Réseaux de Neurones}
 
 Comme évoqué précedemment, les Neural Networks sont une piste naturels à explorer lorsqu'on a pas d'idée a priori de la forme du "bon" noyeau à utiliser dans les SVMs. Un réseau de neuronnes consiste en une succession de couche de neuronnes. La première couche de neuronnes correspond aux données d'entrée et la dernière à la prediction souhaitée. L'avantage principale des réseaux neuronnaux est d'être capable, délors que le réseau a plus de deux couches, d'apprendre des fonctions fortement non linéaires sans apriori sur leur forme. Nous avons utilisé une pénalisation linéaire de la norme des poids. 
 
+La fonction de coup qu'on cherche à minimiser est la suivante :
+\begin{equation}
+\begin{split} 
+J(\theta)= \frac{1}{m} \sum_{i=1}^m \sum_{k=1}^K -y_k^{(i)} log((h_{\theta}(x^{(i)}))_k) - (1 - y_k^{(i)}log(1 - h_{\theta}(x^{(i)}))_k))\\
+ + \frac{\lambda}{2m}[\sum_{j=1}^7\sum_{k=1}^{50}(\theta_{j,k}^{(1)})^2 + \sum_{j=1}^{50}\sum_{k=1}^{50}(\theta_{j,k}^{(2)})^2 + \sum_{j=1}^{50}\sum_{k=1}^2(\theta_{j,k}^{(3)})^2]
+\end{split}
+\end{equation} 
+
+
 \paragraph{prétraitement}
-Le prétraitement correspond ici aux choix des données à mettre dans la première couche. Nous avons utilisé un maximum d'input dans un premier temps. Par la suite nous avons pu éstimé le poids final de chacun de  ces inputs pour évaluer quels étaient les inputs important pour la prise de décision. Après plusieurs itérations et tests, nous avons conclus que les éléments les plus importants étaient les suivants :
+Le prétraitement correspond ici aux choix des données à mettre dans la première couche. Nous avons utilisé un maximum d'input dans un premier temps. Par la suite nous avons pu éstimer le poids final de chacun de  ces inputs pour évaluer quels étaient les inputs important pour la prise de décision. Après plusieurs itérations et tests, nous avons conclus que les éléments les plus importants étaient les suivants :
 
 \begin{itemize}
 
@@ -280,9 +288,5 @@ Notons enfin que l'image 16 a également un taux de précision très faible, en 
 Dans les circonstances actuelles, certaines images ont des résultats très inférieurs à cette valeur moyenne, voire en-deçà de 50\%: ces méthodes ne sont donc pas assez fiable pour permettre de bien classifier les données.
 
 \tableofcontents
-
-
 \listoffigures
-\listoftables
-\printindex
 \end{document}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.11.5)  21 FEB 2016 17:58
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.11.5)  21 FEB 2016 18:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -198,6 +198,64 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 Package: titlepic 2009/08/03 1.1 Package to display a picture on the title page
 
 )
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2013/01/14 v2.14 AMS math features
+\@mathmargin=\skip51
+
+For additional information on amsmath, use the `?' option.
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks24
+\ex@=\dimen118
+))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen119
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count99
+LaTeX Info: Redefining \frac on input line 210.
+\uproot@=\count100
+\leftroot@=\count101
+LaTeX Info: Redefining \overline on input line 306.
+\classnum@=\count102
+\DOTSCASE@=\count103
+LaTeX Info: Redefining \ldots on input line 378.
+LaTeX Info: Redefining \dots on input line 381.
+LaTeX Info: Redefining \cdots on input line 466.
+\Mathstrutbox@=\box28
+\strutbox@=\box29
+\big@size=\dimen120
+LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
+\macc@depth=\count104
+\c@MaxMatrixCols=\count105
+\dotsspace@=\muskip10
+\c@parentequation=\count106
+\dspbrk@lvl=\count107
+\tag@help=\toks25
+\row@=\count108
+\column@=\count109
+\maxfields@=\count110
+\andhelp@=\toks26
+\eqnshift@=\dimen121
+\alignsep@=\dimen122
+\tagshift@=\dimen123
+\tagwidth@=\dimen124
+\totwidth@=\dimen125
+\lineht@=\dimen126
+\@envbody=\toks27
+\multlinegap=\skip52
+\multlinetaggap=\skip53
+\mathdisplay@stack=\toks28
+LaTeX Info: Redefining \[ on input line 2665.
+LaTeX Info: Redefining \] on input line 2666.
+)
 \@indexfile=\write3
 \openout3 = `rapport.idx'.
 
@@ -206,42 +264,42 @@ Writing index file rapport.idx
 (./rapport.aux)
 \openout1 = `rapport.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Try loading font information for T1+lmr on input line 27.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Try loading font information for T1+lmr on input line 28.
  (/usr/local/texlive/2015/texmf-dist/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/ucs/ucsencs.def
 File: ucsencs.def 2011/01/21 Fixes to fontencodings LGR, T3
 )
-LaTeX Info: Redefining \degres on input line 27.
-LaTeX Info: Redefining \dots on input line 27.
-LaTeX Info: Redefining \up on input line 27.
+LaTeX Info: Redefining \degres on input line 28.
+LaTeX Info: Redefining \dots on input line 28.
+LaTeX Info: Redefining \up on input line 28.
 
 (/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count99
-\scratchdimen=\dimen118
-\scratchbox=\box28
-\nofMPsegments=\count100
-\nofMParguments=\count101
-\everyMPshowfont=\toks24
-\MPscratchCnt=\count102
-\MPscratchDim=\dimen119
-\MPnumerator=\count103
-\makeMPintoPDFobject=\count104
-\everyMPtoPDFconversion=\toks25
+\scratchcounter=\count111
+\scratchdimen=\dimen127
+\scratchbox=\box30
+\nofMPsegments=\count112
+\nofMParguments=\count113
+\everyMPshowfont=\toks29
+\MPscratchCnt=\count114
+\MPscratchDim=\dimen128
+\MPnumerator=\count115
+\makeMPintoPDFobject=\count116
+\everyMPtoPDFconversion=\toks30
 ) (/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
 )
@@ -323,279 +381,279 @@ e
 (/usr/local/texlive/2015/texmf-dist/tex/latex/ucs/data/uni-0.def
 File: uni-0.def 2013/05/13 UCS: Unicode data U+0000..U+00FF
 )
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 29.
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 30.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 29.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 30.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 29.
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 30.
 
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 29.
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 30.
 
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 29.
+(Font)              <12> on input line 30.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 29.
+(Font)              <8> on input line 30.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 29.
+(Font)              <6> on input line 30.
 
 <figures/titlepic1.png, id=1, 346.29375pt x 327.2225pt>
 File: figures/titlepic1.png Graphic file (type png)
 
 <use figures/titlepic1.png>
-Package pdftex.def Info: figures/titlepic1.png used on input line 29.
+Package pdftex.def Info: figures/titlepic1.png used on input line 30.
 (pdftex.def)             Requested size: 199.16928pt x 188.20639pt.
 
 <figures/titlepic2.png, id=3, 347.2975pt x 330.23375pt>
 File: figures/titlepic2.png Graphic file (type png)
 
 <use figures/titlepic2.png>
-Package pdftex.def Info: figures/titlepic2.png used on input line 29.
+Package pdftex.def Info: figures/titlepic2.png used on input line 30.
 (pdftex.def)             Requested size: 199.16928pt x 189.3891pt.
  [1
 
 {/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./figur
 es/titlepic1.png> <./figures/titlepic2.png>]
-[1]
+[1
+
+]
 Chapitre 1.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 39.
+(Font)              <10> on input line 38.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 39.
+(Font)              <7> on input line 38.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 39.
+(Font)              <5> on input line 38.
 <figures/piece(1).jpg, id=19, 562.1pt x 433.62pt>
 File: figures/piece(1).jpg Graphic file (type jpg)
  <use figures/piece(1).jpg>
-Package pdftex.def Info: figures/piece(1).jpg used on input line 45.
+Package pdftex.def Info: figures/piece(1).jpg used on input line 44.
 (pdftex.def)             Requested size: 85.35826pt x 65.8474pt.
 
 <figures/piece(2).jpg, id=20, 562.1pt x 433.62pt>
 File: figures/piece(2).jpg Graphic file (type jpg)
  <use figures/piece(2).jpg>
-Package pdftex.def Info: figures/piece(2).jpg used on input line 46.
+Package pdftex.def Info: figures/piece(2).jpg used on input line 45.
 (pdftex.def)             Requested size: 85.35826pt x 65.8474pt.
 
 <figures/piece(3).jpg, id=21, 562.1pt x 433.62pt>
 File: figures/piece(3).jpg Graphic file (type jpg)
  <use figures/piece(3).jpg>
-Package pdftex.def Info: figures/piece(3).jpg used on input line 47.
+Package pdftex.def Info: figures/piece(3).jpg used on input line 46.
 (pdftex.def)             Requested size: 85.35826pt x 65.8474pt.
 
 <figures/piece(4).jpg, id=22, 562.1pt x 433.62pt>
 File: figures/piece(4).jpg Graphic file (type jpg)
  <use figures/piece(4).jpg>
-Package pdftex.def Info: figures/piece(4).jpg used on input line 48.
+Package pdftex.def Info: figures/piece(4).jpg used on input line 47.
 (pdftex.def)             Requested size: 85.35826pt x 65.8474pt.
 
 <figures/piece(5).jpg, id=23, 562.1pt x 433.62pt>
 File: figures/piece(5).jpg Graphic file (type jpg)
  <use figures/piece(5).jpg>
-Package pdftex.def Info: figures/piece(5).jpg used on input line 49.
+Package pdftex.def Info: figures/piece(5).jpg used on input line 48.
 (pdftex.def)             Requested size: 85.35826pt x 65.8474pt.
 
 <figures/piece(6).jpg, id=24, 562.1pt x 433.62pt>
 File: figures/piece(6).jpg Graphic file (type jpg)
  <use figures/piece(6).jpg>
-Package pdftex.def Info: figures/piece(6).jpg used on input line 50.
+Package pdftex.def Info: figures/piece(6).jpg used on input line 49.
 (pdftex.def)             Requested size: 85.35826pt x 65.8474pt.
 
 <figures/piece(7).jpg, id=25, 562.1pt x 433.62pt>
 File: figures/piece(7).jpg Graphic file (type jpg)
  <use figures/piece(7).jpg>
-Package pdftex.def Info: figures/piece(7).jpg used on input line 51.
+Package pdftex.def Info: figures/piece(7).jpg used on input line 50.
 (pdftex.def)             Requested size: 85.35826pt x 65.8474pt.
 
 <figures/piece(8).jpg, id=26, 562.1pt x 433.62pt>
 File: figures/piece(8).jpg Graphic file (type jpg)
  <use figures/piece(8).jpg>
-Package pdftex.def Info: figures/piece(8).jpg used on input line 52.
+Package pdftex.def Info: figures/piece(8).jpg used on input line 51.
 (pdftex.def)             Requested size: 85.35826pt x 65.8474pt.
 
 <figures/piece(9).jpg, id=27, 562.1pt x 433.62pt>
 File: figures/piece(9).jpg Graphic file (type jpg)
  <use figures/piece(9).jpg>
-Package pdftex.def Info: figures/piece(9).jpg used on input line 53.
+Package pdftex.def Info: figures/piece(9).jpg used on input line 52.
 (pdftex.def)             Requested size: 85.35826pt x 65.8474pt.
 
 <figures/piece(10).jpg, id=28, 562.1pt x 433.62pt>
 File: figures/piece(10).jpg Graphic file (type jpg)
  <use figures/piece(10).jpg>
-Package pdftex.def Info: figures/piece(10).jpg used on input line 54.
+Package pdftex.def Info: figures/piece(10).jpg used on input line 53.
 (pdftex.def)             Requested size: 85.35826pt x 65.8474pt.
 
 <figures/piece(11).jpg, id=29, 562.1pt x 433.62pt>
 File: figures/piece(11).jpg Graphic file (type jpg)
  <use figures/piece(11).jpg>
-Package pdftex.def Info: figures/piece(11).jpg used on input line 55.
+Package pdftex.def Info: figures/piece(11).jpg used on input line 54.
 (pdftex.def)             Requested size: 85.35826pt x 65.8474pt.
 
 <figures/piece(12).jpg, id=30, 562.1pt x 433.62pt>
 File: figures/piece(12).jpg Graphic file (type jpg)
  <use figures/piece(12).jpg>
-Package pdftex.def Info: figures/piece(12).jpg used on input line 56.
+Package pdftex.def Info: figures/piece(12).jpg used on input line 55.
 (pdftex.def)             Requested size: 85.35826pt x 65.8474pt.
 
 <figures/piece(13).jpg, id=31, 562.1pt x 433.62pt>
 File: figures/piece(13).jpg Graphic file (type jpg)
  <use figures/piece(13).jpg>
-Package pdftex.def Info: figures/piece(13).jpg used on input line 57.
+Package pdftex.def Info: figures/piece(13).jpg used on input line 56.
 (pdftex.def)             Requested size: 85.35826pt x 65.8474pt.
 
 <figures/piece(14).jpg, id=32, 562.1pt x 433.62pt>
 File: figures/piece(14).jpg Graphic file (type jpg)
  <use figures/piece(14).jpg>
-Package pdftex.def Info: figures/piece(14).jpg used on input line 58.
+Package pdftex.def Info: figures/piece(14).jpg used on input line 57.
 (pdftex.def)             Requested size: 85.35826pt x 65.8474pt.
 
 <figures/piece(15).jpg, id=33, 562.1pt x 433.62pt>
 File: figures/piece(15).jpg Graphic file (type jpg)
  <use figures/piece(15).jpg>
-Package pdftex.def Info: figures/piece(15).jpg used on input line 59.
+Package pdftex.def Info: figures/piece(15).jpg used on input line 58.
 (pdftex.def)             Requested size: 85.35826pt x 65.8474pt.
 
 <figures/piece(16).jpg, id=34, 562.1pt x 433.62pt>
 File: figures/piece(16).jpg Graphic file (type jpg)
  <use figures/piece(16).jpg>
-Package pdftex.def Info: figures/piece(16).jpg used on input line 60.
+Package pdftex.def Info: figures/piece(16).jpg used on input line 59.
 (pdftex.def)             Requested size: 85.35826pt x 65.8474pt.
 
 <figures/piece(17).jpg, id=35, 562.1pt x 433.62pt>
 File: figures/piece(17).jpg Graphic file (type jpg)
  <use figures/piece(17).jpg>
-Package pdftex.def Info: figures/piece(17).jpg used on input line 61.
+Package pdftex.def Info: figures/piece(17).jpg used on input line 60.
 (pdftex.def)             Requested size: 85.35826pt x 65.8474pt.
 
-[1
+[2
 
-] [2 <./figures/piece(1).jpg> <./figures/piece(2).jpg> <./figures/piece(3).jpg>
+] [3 <./figures/piece(1).jpg> <./figures/piece(2).jpg> <./figures/piece(3).jpg>
  <./figures/piece(4).jpg> <./figures/piece(5).jpg> <./figures/piece(6).jpg> <./
 figures/piece(7).jpg> <./figures/piece(8).jpg> <./figures/piece(9).jpg> <./figu
 res/piece(10).jpg> <./figures/piece(11).jpg> <./figures/piece(12).jpg> <./figur
 es/piece(13).jpg> <./figures/piece(14).jpg> <./figures/piece(15).jpg> <./figure
-s/piece(16).jpg> <./figures/piece(17).jpg>] [3]
+s/piece(16).jpg> <./figures/piece(17).jpg>] [4]
 Chapitre 2.
 (/usr/local/texlive/2015/texmf-dist/tex/latex/ucs/data/uni-32.def
 File: uni-32.def 2013/05/13 UCS: Unicode data U+2000..U+20FF
 )
-<figures/PCA_0.png, id=48, 578.16pt x 433.62pt>
+<figures/PCA_0.png, id=47, 578.16pt x 433.62pt>
 File: figures/PCA_0.png Graphic file (type png)
  <use figures/PCA_0.png>
-Package pdftex.def Info: figures/PCA_0.png used on input line 100.
+Package pdftex.def Info: figures/PCA_0.png used on input line 99.
 (pdftex.def)             Requested size: 284.52756pt x 213.39536pt.
 
-<figures/PCA_1.png, id=49, 578.16pt x 433.62pt>
+<figures/PCA_1.png, id=48, 578.16pt x 433.62pt>
 File: figures/PCA_1.png Graphic file (type png)
  <use figures/PCA_1.png>
-Package pdftex.def Info: figures/PCA_1.png used on input line 105.
+Package pdftex.def Info: figures/PCA_1.png used on input line 104.
 (pdftex.def)             Requested size: 284.52756pt x 213.39536pt.
 
-<figures/PCA_3.png, id=50, 578.16pt x 433.62pt>
+<figures/PCA_3.png, id=49, 578.16pt x 433.62pt>
 File: figures/PCA_3.png Graphic file (type png)
  <use figures/PCA_3.png>
-Package pdftex.def Info: figures/PCA_3.png used on input line 110.
+Package pdftex.def Info: figures/PCA_3.png used on input line 109.
 (pdftex.def)             Requested size: 284.52756pt x 213.39536pt.
 
-<figures/PCA_2.png, id=51, 578.16pt x 433.62pt>
+<figures/PCA_2.png, id=50, 578.16pt x 433.62pt>
 File: figures/PCA_2.png Graphic file (type png)
  <use figures/PCA_2.png>
-Package pdftex.def Info: figures/PCA_2.png used on input line 115.
+Package pdftex.def Info: figures/PCA_2.png used on input line 114.
 (pdftex.def)             Requested size: 284.52756pt x 213.39536pt.
 
-[4
+[5
 
-] [5 <./figures/PCA_0.png> <./figures/PCA_1.png>] [6 <./figures/PCA_3.png> <./f
+] [6 <./figures/PCA_0.png> <./figures/PCA_1.png>] [7 <./figures/PCA_3.png> <./f
 igures/PCA_2.png>]
 <figures/RandomForestPerf.png, id=66, 473.51906pt x 229.60782pt>
 File: figures/RandomForestPerf.png Graphic file (type png)
 
 <use figures/RandomForestPerf.png>
-Package pdftex.def Info: figures/RandomForestPerf.png used on input line 145.
+Package pdftex.def Info: figures/RandomForestPerf.png used on input line 144.
 (pdftex.def)             Requested size: 284.52756pt x 137.96895pt.
- [7 <./figures/RandomForestPerf.png>]
+ [8 <./figures/RandomForestPerf.png>]
 <figures/SVM_CV.png, id=70, 417.2388pt x 218.2554pt>
 File: figures/SVM_CV.png Graphic file (type png)
  <use figures/SVM_CV.png>
-Package pdftex.def Info: figures/SVM_CV.png used on input line 204.
+Package pdftex.def Info: figures/SVM_CV.png used on input line 203.
 (pdftex.def)             Requested size: 284.52756pt x 148.84131pt.
 
-[8] <figures/input_weight_nn.png, id=74, 531.9875pt x 417.56pt>
+[9] <figures/input_weight_nn.png, id=74, 531.9875pt x 417.56pt>
 File: figures/input_weight_nn.png Graphic file (type png)
 
 <use figures/input_weight_nn.png>
-Package pdftex.def Info: figures/input_weight_nn.png used on input line 234.
+Package pdftex.def Info: figures/input_weight_nn.png used on input line 242.
 (pdftex.def)             Requested size: 284.52756pt x 223.33185pt.
-
-<figures/nn_results.png, id=75, 794.97pt x 430.60875pt>
+ [10 <./figures/SVM_CV.png>]
+<figures/nn_results.png, id=83, 794.97pt x 430.60875pt>
 File: figures/nn_results.png Graphic file (type png)
 
 <use figures/nn_results.png>
-Package pdftex.def Info: figures/nn_results.png used on input line 245.
+Package pdftex.def Info: figures/nn_results.png used on input line 253.
 (pdftex.def)             Requested size: 284.52756pt x 154.11885pt.
 
-<figures/Compared_CV.png, id=76, 712.1004pt x 332.9238pt>
+<figures/Compared_CV.png, id=84, 712.1004pt x 332.9238pt>
 File: figures/Compared_CV.png Graphic file (type png)
 
 <use figures/Compared_CV.png>
-Package pdftex.def Info: figures/Compared_CV.png used on input line 253.
+Package pdftex.def Info: figures/Compared_CV.png used on input line 261.
 (pdftex.def)             Requested size: 284.52756pt x 133.01984pt.
- [9 <./figures/SVM_CV.png>] [10 <./figures/input_weight_nn.png> <./figures/nn_r
-esults.png>] [11 <./figures/Compared_CV.png>]
-(./rapport.toc)
+ [11 <./figures/input_weight_nn.png> <./figures/nn_results.png>] [12 <./figures
+/Compared_CV.png>] (./rapport.toc)
 \tf@toc=\write4
 \openout4 = `rapport.toc'.
 
- [12
+ [13
 
-] (./rapport.lof)
+]
+(./rapport.lof)
 \tf@lof=\write5
 \openout5 = `rapport.lof'.
 
- [13
-
-] (./rapport.lot)
-\tf@lot=\write6
-\openout6 = `rapport.lot'.
-
-
-No file rapport.ind.
-[14
+ [14
 
 ] (./rapport.aux) ) 
 Here is how much of TeX's memory you used:
- 4662 strings out of 493089
- 66587 string characters out of 6134842
- 136415 words of memory out of 5000000
- 8013 multiletter control sequences out of 15000+600000
+ 5251 strings out of 493089
+ 73330 string characters out of 6134842
+ 146758 words of memory out of 5000000
+ 8590 multiletter control sequences out of 15000+600000
  64824 words of font info for 47 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 38i,6n,32p,1239b,598s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 38i,15n,32p,1239b,598s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/lm/lm-ma
-thit.enc}{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr
-/local/texlive/2015/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}</usr/local/texlive
-/2015/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2015/texm
-f-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2015/texmf-dist/fon
-ts/type1/public/lm/lmcsc10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/
-public/lm/lmmi10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/
-lmr10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmr12.pfb><
-/usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmr17.pfb>
-Output written on rapport.pdf (16 pages, 2866769 bytes).
+thsy.enc}{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr
+/local/texlive/2015/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}{/usr/local/tex
+live/2015/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2015/
+texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}</usr/local/texlive/2015/texmf-dist/fon
+ts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/p
+ublic/lm/lmbx12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/l
+mcsc10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmex10.pfb
+></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/loc
+al/texlive/2015/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></usr/local/texlive/
+2015/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2015/texmf-
+dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2015/texmf-dist/fonts/
+type1/public/lm/lmr17.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/publi
+c/lm/lmr7.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmsy10.
+pfb>
+Output written on rapport.pdf (15 pages, 2900562 bytes).
 PDF statistics:
- 128 PDF objects out of 1000 (max. 8388607)
- 64 compressed objects within 1 object stream
+ 143 PDF objects out of 1000 (max. 8388607)
+ 76 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  141 words of extra memory for PDF output out of 10000 (max. 10000000)
 
