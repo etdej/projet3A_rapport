@@ -80,6 +80,12 @@ La matrice de Müller est obtenue à partir de l'analyse de la polarisation de l
 Le PICM se bases pour cela d'observations de relation entre les images polarisées et le diagnostic. 
 La polarisation génère 16 images par échantillon. On associe alors à chaque pixel une matrice $4x4$ appelée matrice de Müller. Dans cette matrice, la première ligne et la première colonne représentent l'intensité du signal, ces éléments influent peu sur le diagnostic mais ont des valeur élevés, ils introduisent beaucoup de biais et de sur-apprentissage. Nous avons donc décidé de ne pas les prendre en compte. Les éléments diagonaux sont normalement censé être les plus significatifs mais les reflets introduisent beaucoup de bruit rendant ces données difficilement utilisables. Il reste 6 éléments dans la matrices sur lesquels nous allons nous concentrer. 
 
+
+\chapter{Le traitement des données}
+
+\paragraph{Prétraitement des données}
+Le Prétraitement des données est l'étape essentielle qui précède l'apprentissage. Elle est la clé de celui ci, un bon prétraitement permet d'éliminer le bruit et présente les données sous un angle facilement exploitable. Pour ce projet, le prétraitement a été plutôt réduit, l'enjeu principal étant de bien comprendre les données pour pouvoir les exploiter. Pour cela nous avons eu recours à plusieurs méthodes décrites par la suite. La difficulté de l'analyse des données nous a pas laissé le temps de travailler le prétraitement. Nous nous sommes donc restreints à des prétraitement simples comme le clustering, le gradient, des moyennes, des écarts types qui ont surtout été utilisés pour trouver le bon modèle d'apprentissage.
+
 \subsection{Le Clustering}
 La disposition des données n'étant pas facilement exploitable directement il fallait réduire la complexité du problème, par exemple en limitant le nombre de données. Nous avons ainsi décidé de clustériser les données de chaque image afin d'en avoir beaucoup moins, mais plus significatives. La position du pixel dans l'image n'a pas été prise en compte, même si les zones résultantes sont proches. La clustérisation à été faite par un algorithme de type KNN (k plus proches voisins) sur les $6$ éléments significatifs de la matrice de Müller. Les diagnostics étant propres à chaque image (une seule image avec un diagnostic non uniforme), chaque cluster est associé à un diagnostic. 
 
@@ -92,16 +98,10 @@ La méthode de clustering utilisé consiste en :
 \end{itemize}
 
 Cette méthode nous a permis de passer de $163 000$ points à $52$ plus significatifs. Elle nous a aussi permis de mieux comprendre la répartition des points. Le clustering a surtout un apport au niveau de la compréhension des données. Il pourrait avoir un impact (en tant que tel) sur les résultats, mais son but a été surtout de mieux comprendre la disposition des données pour pouvoir apprendre dessus.
-\chapter{Le traitement des données}
-
-\paragraph{Prétraitement des données}
-Le Prétraitement de données est l'étape essentielle qui précède l'apprentissage. Elle est la clé de celui ci, un bon prétraitement permet d'éliminer le bruit et présente les données sous un angle facilement exploitable. C'est là que se situe tout l'enjeu d'un classifieur Big Data ainsi que le travail d'un data analyst, les méthodes d'apprentissage étant préexistantes.  
-
-Les différents types de prétraitements que l'on peut faire avant de traiter les données
 
 \section{Réduction de dimension}
 
-Avant d'essayer de classiffier les points, on peut tout d'abod tenter de rédurie la dimension des points à traiter par des méthodes de réduction de dimension
+Avant d'essayer de classiffier les points, on peut tout d’abord tenter de réduire la dimension des points à traiter par des méthodes de réduction de dimension
 \subsection{PCA}
 L'Analyse en Composantes Principales (ou PCA) consiste à essayer de représenter les données dans un espace de plus petites dimensions. Les vecteurs directeurs du nouvel espace maximise la variance entre les données. Nous présentons ici les résultats pour la dimension 2.
 \paragraph{prétraitement utilisé}
@@ -203,7 +203,7 @@ Les résultats donnés par les KNN ne sont pas très bon. Piste d'explication?
 
 \subsection{SVM}
 \index{SVM}
-Les Machines à Vecteurs Support ou SVM (Support Vector Machine) sont des classifieurs qui cherchent à séparer linéairement deux ensembles de points dans un certain espace en maximisant la marge entre ces deux sets de points. Par défault (avec un noyeau linéaire), la séparation est donc nécessairement linéaire. Cependant, en transformant nos données pour les plongées dans un autre espace, souvent de dimension supérieur, on peut générer un modèle de capacité supérieur et fortement non linéaire. C'est ce qu'on appelle le Kernel trick\index{Kernel trick}
+Les Machines à Vecteurs Support ou SVM (Support Vector Machine) sont des classifieurs qui cherchent à séparer linéairement deux ensembles de points dans un certain espace en maximisant la marge entre ces deux sets de points. Par défaut (avec un noyau linéaire), la séparation est donc nécessairement linéaire. Cependant, en transformant nos données pour les plongées dans un autre espace, souvent de dimension supérieur, on peut générer un modèle de capacité supérieur et fortement non linéaire. C'est ce qu'on appelle le Kernel trick\index{Kernel trick}
 
 \paragraph{Prétraitement utilisé}
 Les SVM sont efficaces lorsque le nombre de feature est inférieur (voire très inférieur) au nombre de données. On applique donc cette méthode aux points directement, et non pas aux centres des clusters.
@@ -217,13 +217,13 @@ Les SVM sont efficaces lorsque le nombre de feature est inférieur (voire très 
 \end{figure}
 
 \paragraph{Explication et Piste d'amélioration}
-Le problème du Kernel trick\index{Kernel trick} est qu'il necessitte d'avoir une idée a priori du type de fonction que l'on cherche à estimer pour pouvoir utiliser un noyeau adequat. Ce n'est ici pas le cas, on ne sais pas a priori qu'elle pourrait être le type de fonction permettant de distinguer linéairement un pixel sain d'un pixel malade.
+Le problème du Kernel trick\index{Kernel trick} est qu'il nécessite d'avoir une idée a priori du type de fonction que l'on cherche à estimer pour pouvoir utiliser un noyau adéquat. Ce n'est ici pas le cas, on ne sais pas a priori qu'elle pourrait être le type de fonction permettant de distinguer linéairement un pixel sain d'un pixel malade.
 
-Pour contrer ce problème, il faudrait "apprendre la fonction noyeau". C'est en quelque sorte le rôle des neural networks.\index{Neural networks}. On peut voir les n-1 couches du réseau de neuronnes comme étant la fonction du noyeau et la dernière comme une séparation linéaire sur les données plongées dans ce nouvel espace.
+Pour contrer ce problème, il faudrait "apprendre la fonction noyau". C'est en quelque sorte le rôle des neural networks.\index{Neural networks}. On peut voir les n-1 couches du réseau de neurones comme étant la fonction du noyau et la dernière comme une séparation linéaire sur les données plongées dans ce nouvel espace.
 
 \subsection{Réseaux de Neurones}
 
-Comme évoqué précedemment, les Neural Networks sont une piste naturels à explorer lorsqu'on a pas d'idée a priori de la forme du "bon" noyeau à utiliser dans les SVMs. Un réseau de neuronnes consiste en une succession de couche de neuronnes. La première couche de neuronnes correspond aux données d'entrée et la dernière à la prediction souhaitée. L'avantage principale des réseaux neuronnaux est d'être capable, délors que le réseau a plus de deux couches, d'apprendre des fonctions fortement non linéaires sans apriori sur leur forme. Nous avons utilisé une pénalisation linéaire de la norme des poids. 
+Comme évoqué précédemment, les Neural Networks sont une piste naturels à explorer lorsqu'on a pas d'idée a priori de la forme du "bon" noyau à utiliser dans les SVMs. Un réseau de neurones consiste en une succession de couche de neurones. La première couche de neurones correspond aux données d'entrée et la dernière à la prédiction souhaitée. L'avantage principale des réseaux neuronaux est d'être capable, dès lors que le réseau a plus de deux couches, d'apprendre des fonctions fortement non linéaires sans à priori sur leur forme. Nous avons utilisé une pénalisation linéaire de la norme des poids. 
 
 La fonction de coup qu'on cherche à minimiser est la suivante :
 \begin{equation}
@@ -240,7 +240,7 @@ J(\theta)= \frac{1}{m} \sum_{i=1}^m \sum_{k=1}^K -y_k^{(i)} log((h_{\theta}(x^{(
 \end{figure}
 
 \paragraph{prétraitement}
-Le prétraitement correspond ici aux choix des données à mettre dans la première couche. Nous avons utilisé un maximum d'input dans un premier temps. Par la suite nous avons pu éstimer le poids final de chacun de  ces inputs pour évaluer quels étaient les inputs important pour la prise de décision. Après plusieurs itérations et tests, nous avons conclus que les éléments les plus importants étaient les suivants :
+Le prétraitement correspond ici aux choix des données à mettre dans la première couche. Nous avons utilisé un maximum d'input dans un premier temps. Par la suite nous avons pu estimer le poids final de chacun de  ces inputs pour évaluer quels étaient les inputs important pour la prise de décision. Après plusieurs itérations et tests, nous avons conclus que les éléments les plus importants étaient les suivants :
 
 \begin{itemize}
 
@@ -262,9 +262,9 @@ Le prétraitement correspond ici aux choix des données à mettre dans la premi�
 
 \paragraph{Résultats}
 Les résultats présentés ici sont obtenus avec un réseaux de quatre couches : [7, 50, 50, 2] et un constante de pénalisation de 0.5.
-On obtient un tax de bonnes prédictions moyen de 80\% en effectuant une validation croisée avec un apprentissage sur 16 images et test sur la 17ème. 
+On obtient un taux de bonnes prédictions moyen de 80\% en effectuant une validation croisée avec un apprentissage sur 16 images et test sur la 17ème. 
 
-Les résultats nous seraient surement améliorés en augmentant le nombre d'itération et en s'appuyant sur un set de donnée plus large. En l'état, les résultas sont comparables à ceux donner par les SVMs.
+Les résultats nous seraient sûrement améliorés en augmentant le nombre d'itération et en s'appuyant sur un set de donnée plus large. En l'état, les résultats sont comparables à ceux donner par les SVMs.
 \begin{figure}[htbp]
   \caption{Résultats de la classification avec des neural networks}
   \centering
@@ -302,8 +302,12 @@ Enfin, on calcule le taux de précision maximal pour les méthodes de classifica
 La méthode Knn semble avoir de moins bons résultats que les méthodes SVM et Neural network. 
 
 Par ailleurs, on remarque que les images ayant beaucoup de pixels (les images 2 et 8 représentent 30\% des pixels) ont des moins bons taux de prédiction, ce qui pourrait indiquer que nous n'avons pas atteint le seuil de données critiques nécessaires à des résultats optimaux. Avec quelques images supplémentaires, on pourrait espérer garantir un taux de précision d'au moins 80\% avec cette méthode. 
-Notons enfin que l'image 16 a également un taux de précision très faible, en dépit de son petit combre de points. C'est la seule image ayant à la fois des zones saines et malades, il semble donc que les méthodes aient tendance à prédire le même diagnostic pour les pixels d'une même image.
+Notons enfin que l'image 16 a également un taux de précision très faible, en dépit de son petit nombre de points. C'est la seule image ayant à la fois des zones saines et malades, il semble donc que les méthodes aient tendance à prédire le même diagnostic pour les pixels d'une même image.
 Dans les circonstances actuelles, certaines images ont des résultats très inférieurs à cette valeur moyenne, voire en-deçà de 50\%: ces méthodes ne sont donc pas assez fiable pour permettre de bien classifier les données.
+
+
+\chapter*{Conclusion}
+Ce Projet de Big Data nous a permis de mettre en place un classifieur sur des images, plus précisément les pixels, puisque nous nous intéressons à une propriété locale de l'image. La compréhension et l'analyse des données nous ont pris beaucoup plus de temps que prévu, le répartition et le faible nombre de données n'aidant pas. Nous avons tout de même réussi, après de nombreuses tentatives à trouver un modèle qui arrive à apprendre sur les données sans sur apprentissage. La SVM et le réseau de neurones ont de bons résultats, avec des taux de prédiction qui commencent à être exploitable. Pour aller plus loin il faudrait analyser les images après prédiction et voir si une amélioration par cohérence spatiale est possible. Il faudrait étudier les pistes de prétraitement qui permettraient des nettoyer les données et de prendre en compte la configuration de l'appareil au moment de la mesure. L’entraînement de ce classifieur sur un gros réseau de neurones, avec toutes les données disponibles permettrai d'atteindre des taux de prédiction très compétitifs. Pour compléter l'analyse et pouvoir l'utiliser en médecine il faudra aussi analyser la spécificité et la sensibilité afin de jouer sur les paramètre et d'atteindre un résultat proche des taux souhaités.
 
 \tableofcontents
 \listoffigures
